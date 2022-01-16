@@ -33,7 +33,7 @@
       // Jesli modyfikujemy, to trzeba zrobic COMMIT:
       // oci_commit($conn);
       */
-      <a href="login_member.php">Zaloguj się</a>
     ?>
+    <a href="login_member.php">Zaloguj się</a>
   </BODY>
 </HTML>
