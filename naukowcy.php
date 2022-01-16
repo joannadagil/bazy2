@@ -1,6 +1,7 @@
 <HTML>
   <HEAD>
     <TITLE> Genealogia matematyczna - Naukowcy </TITLE>
+    <link rel="stylesheet" href="css/main.css">
   </HEAD>
   <BODY>
     <H2> Naukowcy </H2>
@@ -20,7 +21,7 @@
 	$e = oci_error();
 	echo $e['message'];
       }
-      // Tworzenie wyrazenia SQL-owego. Uzycie fmurlak.naukowiec zamiast naukowiec pozwala na odczytanie tabeli inego uzytkownika. 
+      // Tworzenie wyrazenia SQL-owego. Uzycie fmurlak.naukowiec zamiast naukowiec pozwala na odczytanie tabeli inego uzytkownika.
       $stmt = oci_parse($conn, "SELECT * FROM naukowiec");
       // Wykonywanie wyrazenia SQL-owego
       oci_execute($stmt, OCI_NO_AUTO_COMMIT);
