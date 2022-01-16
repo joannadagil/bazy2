@@ -12,6 +12,7 @@ authorship.write("set transaction isolation level serializable;\n")
 
 author_id_dict = {}
 author_id_index = 1
+new =
 
 next(csv)
 for line in csv:
@@ -20,8 +21,10 @@ for line in csv:
     if not split_line[2] in author_id_dict:
         author_id_dict[split_line[2]] = author_id_index
         author_id_index += 1
-    authors.write("INSERT INTO AUTHOR VALUES (" + str(author_id_dict[split_line[2]])+ ",'" + split_line[2] + "');\n")
     authorship.write("INSERT INTO AUTHORSHIP VALUES (" + str(author_id_dict[split_line[2]]) + "," + split_line[0] + ");\n")
+
+for key in author_id_dict:
+    authors.write("INSERT INTO AUTHOR VALUES (" + str(author_id_dict[key])+ ",'" + key + "');\n")
 
 books.write("commit;")
 authors.write("commit;")

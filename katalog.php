@@ -21,11 +21,11 @@
       $stmt = oci_parse($conn, "SELECT * FROM BOOK ORDER BY BID FETCH FIRST 100 ROWS ONLY");
       // Wykonywanie wyrazenia SQL-owego
       oci_execute($stmt, OCI_NO_AUTO_COMMIT);
-  
+
       while (($row = oci_fetch_array($stmt, OCI_BOTH))) {
         ?>
         <tr>
-      		<td><?php echo $row["BTITLE"]."\n"; ?></td>
+      		<br><td><?php echo $row["BTITLE"]; ?></td><br>
 	      </tr>
       <?php
       }
