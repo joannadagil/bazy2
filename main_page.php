@@ -35,5 +35,7 @@
       */
     ?>
     <a href="login_member.php">Zaloguj się</a>
+    <a href="rankingi.php">Rankingi</a>
+
   </BODY>
 </HTML>
