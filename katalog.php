@@ -5,15 +5,11 @@
   </HEAD>
   <BODY>
     <H2> Naukowcy </H2>
-    <?PHP // Wchodzimy do PHP
-      //////////////////////////////////
-      // Tworzenie ciasteczka sesyjnego.
+    <?PHP
       session_start();
       
       $search = $_POST['search'];
-      ///////////////////////////////////
-      // Nawiazywanie polaczenia; login i haslo do oracla studenckiego.
-      // Trzeci parametr to serwer bazodanowy; na students bywa ustawiony domyslnie.
+      
       $conn = oci_connect($_SESSION['LOGIN'],$_SESSION['PASS'],"//labora.mimuw.edu.pl/LABS");
       if (!$conn) {
         echo "oci_connect failed\n";
@@ -23,10 +19,17 @@
       // Tworzenie wyrazenia SQL-owego. Uzycie fmurlak.naukowiec zamiast naukowiec pozwala na odczytanie tabeli inego uzytkownika.
       $stmt = oci_parse($conn, "SELECT * FROM BOOK WHERE BTITLE LIKE \"%".$search."%\" ORDER BY BID FETCH FIRST 100 ROWS ONLY");
       // Wykonywanie wyrazenia SQL-owego
-      oci_execute($stmt, OCI_NO_AUTO_COMMIT);
-
-      
+      oci_execute($stmt, OCI_NO_AUTO_COMMIT);   
 ?> 
+
+    <table>
+        <tr>
+          <td><?php echo "<p>SELECT * FROM BOOK WHERE BTITLE LIKE \"%".$search."%\" ORDER BY BID FETCH FIRST 100 ROWS ONLY<\p>" ?></td>
+      		<td><?php echo $row["BTITLE"]; ?></td>
+          <td><?php echo $row["ISBN"]; ?></td>
+	      </tr>
+      }
+    </table>
 
 <div class="topnav">
   <a class="active" href="#home">Home</a>
