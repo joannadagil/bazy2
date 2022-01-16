@@ -22,7 +22,7 @@
       $stmt = oci_parse($conn, "SELECT * FROM BOOK ORDER BY BID FETCH FIRST 100 ROWS ONLY");
       // Wykonywanie wyrazenia SQL-owego
       oci_execute($stmt, OCI_NO_AUTO_COMMIT);
-
+?> <table> <?PHP
       while (($row = oci_fetch_array($stmt, OCI_BOTH))) {
         ?>
         <tr>
@@ -31,5 +31,6 @@
       <?php
       }
     ?>
+    </table>
   </BODY>
 </HTML>
