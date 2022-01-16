@@ -11,6 +11,7 @@
       // Zapisanie loginu i hasla w ciasteczku sesyjnym.
       $_SESSION['LOGIN'] = $_POST['LOGN'];
       $_SESSION['PASS'] = $_POST['PASW'];
+      $_SESSION['USER'] = $_POST['USER'];
       ///////////////////////////////////
       // Nawiazywanie polaczenia; login i haslo do oracla studenckiego.
       // Trzeci parametr to serwer bazodanowy; na students bywa ustawiony domyslnie.
@@ -34,7 +35,7 @@
       // oci_commit($conn);
       */
     ?>
-    <a href="login_member.php">Zaloguj się</a>
+    <a href="logowanie.php">Zaloguj się</a>
     <a href="rankingi.php">Rankingi</a>
     <a href="katalog.php">Katalog</a>
 
