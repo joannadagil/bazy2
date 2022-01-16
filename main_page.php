@@ -15,8 +15,9 @@
       ///////////////////////////////////
       // Nawiazywanie polaczenia; login i haslo do oracla studenckiego.
       // Trzeci parametr to serwer bazodanowy; na students bywa ustawiony domyslnie.
-      $conn = oci_connect($_SESSION['LOGIN'],$_SESSION['PASS'],"//labora.mimuw.edu.pl/LABS");
-      if (!$conn) {
+      
+      $_SESSION['conn'] = oci_connect($_SESSION['LOGIN'],$_SESSION['PASS'],"//labora.mimuw.edu.pl/LABS");
+      if (!$_SESSION['conn']) {
     	echo "oci_connect failed\n";
     	$e = oci_error();
     	echo $e['message'];
