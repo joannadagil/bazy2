@@ -11,14 +11,14 @@
       ///////////////////////////////////
       // Nawiazywanie polaczenia; login i haslo do oracla studenckiego.
       // Trzeci parametr to serwer bazodanowy; na students bywa ustawiony domyslnie.
-      /*$conn = oci_connect($_SESSION['LOGIN'],$_SESSION['PASS'],"//labora.mimuw.edu.pl/LABS");
+      $conn = oci_connect($_SESSION['LOGIN'],$_SESSION['PASS'],"//labora.mimuw.edu.pl/LABS");
       if (!$conn) {
         echo "oci_connect failed\n";
         $e = oci_error();
         echo $e['message'];
-      }*/
+      }
       // Tworzenie wyrazenia SQL-owego. Uzycie fmurlak.naukowiec zamiast naukowiec pozwala na odczytanie tabeli inego uzytkownika.
-      $stmt = oci_parse($_SESSION['conn'], "SELECT * FROM BOOK ORDER BY BID FETCH FIRST 100 ROWS ONLY");
+      $stmt = oci_parse($conn, "SELECT * FROM BOOK ORDER BY BID FETCH FIRST 100 ROWS ONLY");
       // Wykonywanie wyrazenia SQL-owego
       oci_execute($stmt, OCI_NO_AUTO_COMMIT);
 
