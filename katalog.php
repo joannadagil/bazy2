@@ -18,9 +18,14 @@
         echo $e['message'];
       }
       // Tworzenie wyrazenia SQL-owego. Uzycie fmurlak.naukowiec zamiast naukowiec pozwala na odczytanie tabeli inego uzytkownika.
-      $stmt = oci_parse($conn, "SELECT * FROM BOOK");
+      $stmt = oci_parse($conn, "SELECT * FROM BOOK ORDER BY BID FETCH FIRST 100 ROWS ONLY");
       // Wykonywanie wyrazenia SQL-owego
       oci_execute($stmt, OCI_NO_AUTO_COMMIT);
+  
+      while (($row = oci_fetch_array($stmt, OCI_BOTH))) {
+        // Use UPPERCASE column names for the associative array indices and numbers for the ordinary array indices.
+        echo "<P>".$row."<\P>\n";
+      }
       // Jesli modyfikujemy, to trzeba zrobic COMMIT:
       // oci_commit($conn);
     ?>
