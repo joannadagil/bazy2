@@ -9,6 +9,8 @@
       //////////////////////////////////
       // Tworzenie ciasteczka sesyjnego.
       session_start();
+      
+      $search = $_POST['search'];
       ///////////////////////////////////
       // Nawiazywanie polaczenia; login i haslo do oracla studenckiego.
       // Trzeci parametr to serwer bazodanowy; na students bywa ustawiony domyslnie.
@@ -19,10 +21,26 @@
         echo $e['message'];
       }
       // Tworzenie wyrazenia SQL-owego. Uzycie fmurlak.naukowiec zamiast naukowiec pozwala na odczytanie tabeli inego uzytkownika.
-      $stmt = oci_parse($conn, "SELECT * FROM BOOK ORDER BY BID FETCH FIRST 100 ROWS ONLY");
+      $stmt = oci_parse($conn, "SELECT * FROM BOOK WHERE BTITLE LIKE \"%".$search."%\" ORDER BY BID FETCH FIRST 100 ROWS ONLY");
       // Wykonywanie wyrazenia SQL-owego
       oci_execute($stmt, OCI_NO_AUTO_COMMIT);
-?> <table> <?PHP
+
+      
+?> 
+
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <div class="search-container">
+    <form action="katalog.php">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+<table> <?PHP
       while (($row = oci_fetch_array($stmt, OCI_BOTH))) {
         ?>
         <tr>

@@ -36,6 +36,12 @@
       // oci_commit($conn);
       */
     ?>
+
+    <FORM ACTION="katalog.php" METHOD="POST">
+      <INPUT TYPE="HIDDEN" NAME="search" VALUE=""><BR><BR>
+      <INPUT TYPE="SUBMIT" VALUE="Katalog">
+    </FORM>
+
     <a href="logowanie.php">Zaloguj się</a>
     <a href="rankingi.php">Rankingi</a>
     <a href="katalog.php">Katalog</a>
