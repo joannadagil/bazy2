@@ -16,9 +16,9 @@
       // Trzeci parametr to serwer bazodanowy; na students bywa ustawiony domyslnie.
       $conn = oci_connect($_SESSION['LOGIN'],$_SESSION['PASS'],"//labora.mimuw.edu.pl/LABS");
       if (!$conn) {
-	echo "oci_connect failed\n";
-	$e = oci_error();
-	echo $e['message'];
+	      echo "oci_connect failed\n";
+	      $e = oci_error();
+	      echo $e['message'];
       }
       // Tworzenie wyrazenia SQL-owego. Uzycie fmurlak.naukowiec zamiast naukowiec pozwala na odczytanie tabeli inego uzytkownika. 
       $id_naukowiec =  $_GET['id'];

@@ -1,6 +1,6 @@
 <HTML>
   <HEAD>
-    <TITLE> Biblioteka </TITLE>
+    <TITLE> Rankingi </TITLE>
   </HEAD>
   <BODY>
     <H2> Naukowcy </H2>
@@ -9,8 +9,8 @@
       // Tworzenie ciasteczka sesyjnego.
       session_start();
       // Zapisanie loginu i hasla w ciasteczku sesyjnym.
-      $_SESSION['LOGIN'] = $_POST['LOGN'];
-      $_SESSION['PASS'] = $_POST['PASW'];
+      //$_SESSION['LOGIN'] = $_POST['LOGN'];
+      //$_SESSION['PASS'] = $_POST['PASW'];
       ///////////////////////////////////
       // Nawiazywanie polaczenia; login i haslo do oracla studenckiego.
       // Trzeci parametr to serwer bazodanowy; na students bywa ustawiony domyslnie.
@@ -20,8 +20,7 @@
     	$e = oci_error();
     	echo $e['message'];
       }
-      /*
-      // Tworzenie wyrazenia SQL-owego. Uzycie fmurlak.naukowiec zamiast naukowiec pozwala na odczytanie tabeli inego uzytkownika.
+      // Tworzenie wyrazenia SQL-owego. Uzycie fmurlak.naukowiec zamiast naukowiec pozwala na odczytanie tabeli inego uzytkownika. 
       $stmt = oci_parse($conn, "SELECT * FROM naukowiec");
       // Wykonywanie wyrazenia SQL-owego
       oci_execute($stmt, OCI_NO_AUTO_COMMIT);
@@ -32,11 +31,7 @@
       }
       // Jesli modyfikujemy, to trzeba zrobic COMMIT:
       // oci_commit($conn);
-      */
     ?>
-    <a href="login_member.php">Zaloguj się</a>
-    <a href="rankingi.php">Rankingi</a>
-    <a href="katalog.php">Katalog</a>
 
   </BODY>
 </HTML>
