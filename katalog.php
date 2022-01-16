@@ -26,7 +26,7 @@
       while (($row = oci_fetch_array($stmt, OCI_BOTH))) {
         ?>
         <tr>
-      		<br><td><?php echo $row["BTITLE"]; ?></td><br>
+      		<td><?php echo $row["BTITLE"]; ?></td>
 	      </tr>
       <?php
       }
