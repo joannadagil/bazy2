@@ -21,7 +21,7 @@
 	echo $e['message'];
       }
       // Tworzenie wyrazenia SQL-owego. Uzycie fmurlak.naukowiec zamiast naukowiec pozwala na odczytanie tabeli inego uzytkownika. 
-      $stmt = oci_parse($conn, "SELECT * FROM fmurlak.naukowiec");
+      $stmt = oci_parse($conn, "SELECT * FROM naukowiec");
       // Wykonywanie wyrazenia SQL-owego
       oci_execute($stmt, OCI_NO_AUTO_COMMIT);
       // OCI_BOTH sprawia, tablica jest zarowno asocjacyjna, jak i zwykla
