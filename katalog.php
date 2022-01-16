@@ -1,6 +1,7 @@
 <HTML>
   <HEAD>
     <TITLE> Genealogia matematyczna - Naukowcy </TITLE>
+    <link rel="stylesheet" href="css/main.css">
   </HEAD>
   <BODY>
     <H2> Naukowcy </H2>
