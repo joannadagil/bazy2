@@ -23,11 +23,12 @@
       oci_execute($stmt, OCI_NO_AUTO_COMMIT);
   
       while (($row = oci_fetch_array($stmt, OCI_BOTH))) {
-        // Use UPPERCASE column names for the associative array indices and numbers for the ordinary array indices.
-        echo "<P>".$row."<\P>\n";
+        ?>
+        <tr>
+      		<td><?php echo $row["BTITLE"]; ?></td>
+	      </tr>
+      <?php
       }
-      // Jesli modyfikujemy, to trzeba zrobic COMMIT:
-      // oci_commit($conn);
     ?>
   </BODY>
 </HTML>
