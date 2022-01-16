@@ -25,7 +25,11 @@
       while (($row = oci_fetch_array($stmt, OCI_BOTH))) {
         ?>
         <tr>
+<<<<<<< HEAD
       		<br><td><?php echo $row["BTITLE"]; ?></td><br>
+=======
+      		<td><?php "<BR>".echo $row["BTITLE"]."<BR>\n"; ?></td>
+>>>>>>> 5a1b50b1c479e998f1428d399c54648d618f8042
 	      </tr>
       <?php
       }
