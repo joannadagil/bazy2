@@ -12,7 +12,6 @@ authorship.write("set transaction isolation level serializable;\n")
 
 author_id_dict = {}
 author_id_index = 1
-new =
 
 next(csv)
 for line in csv:
