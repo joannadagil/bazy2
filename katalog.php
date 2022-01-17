@@ -7,9 +7,9 @@
     <H2> Naukowcy </H2>
     <?PHP
       session_start();
-      
-      $search = $_POST['search'];
-      
+
+      $search = $_GET['search'];
+
       $conn = oci_connect($_SESSION['LOGIN'],$_SESSION['PASS'],"//labora.mimuw.edu.pl/LABS");
       if (!$conn) {
         echo "oci_connect failed\n";
@@ -19,8 +19,8 @@
       // Tworzenie wyrazenia SQL-owego. Uzycie fmurlak.naukowiec zamiast naukowiec pozwala na odczytanie tabeli inego uzytkownika.
       $stmt = oci_parse($conn, "SELECT * FROM BOOK WHERE BTITLE LIKE \"%".$search."%\" ORDER BY BID FETCH FIRST 100 ROWS ONLY");
       // Wykonywanie wyrazenia SQL-owego
-      oci_execute($stmt, OCI_NO_AUTO_COMMIT);   
-?> 
+      oci_execute($stmt, OCI_NO_AUTO_COMMIT);
+?>
 
     <table>
         <tr>
