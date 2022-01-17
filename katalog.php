@@ -17,7 +17,7 @@
         echo $e['message'];
       }
       // Tworzenie wyrazenia SQL-owego. Uzycie fmurlak.naukowiec zamiast naukowiec pozwala na odczytanie tabeli inego uzytkownika.
-      $stmt = oci_parse($conn, "SELECT * FROM BOOK WHERE BTITLE LIKE \"%".$search."%\" ORDER BY BID FETCH FIRST 100 ROWS ONLY");
+      $stmt = oci_parse($conn, "SELECT * FROM BOOK WHERE BTITLE LIKE \'%".$search."%\' ORDER BY BID FETCH FIRST 100 ROWS ONLY");
       // Wykonywanie wyrazenia SQL-owego
       oci_execute($stmt, OCI_NO_AUTO_COMMIT);
 ?>
