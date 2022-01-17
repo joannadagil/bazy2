@@ -24,7 +24,7 @@
 
     <table>
         <tr>
-          <td><?php echo "<p>SELECT * FROM BOOK WHERE BTITLE LIKE \"%".$search."%\" ORDER BY BID FETCH FIRST 100 ROWS ONLY<\p>" ?></td>
+          <td><?php echo "<p>SELECT * FROM BOOK WHERE BTITLE LIKE \'%".$search."%\' ORDER BY BID FETCH FIRST 100 ROWS ONLY<\p>" ?></td>
       		<td><?php echo $row["BTITLE"]; ?></td>
           <td><?php echo $row["ISBN"]; ?></td>
 	      </tr>
