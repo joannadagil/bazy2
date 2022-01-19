@@ -67,7 +67,12 @@
 
 
     <div class="footer">
-      <h2>Footer</h2>
+      <p style="text-align:left;">
+        BBiblioteka Publiczna im. Ignacego Makowskiego i Joanny Dagil
+        <span style="float:right;">
+        All rights reserved
+        </span>
+      </p>
     </div>
 
   </BODY>
