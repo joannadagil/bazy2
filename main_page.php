@@ -90,6 +90,14 @@
     </div>
 
     <div class="mainnav">
+      <form ACTION="katalog.php" METHOD="POST">
+        <input TYPE="HIDDEN" NAME="search" VALUE=""><BR><BR>
+        <input TYPE="SUBMIT" VALUE="Katalog">
+      </form>
+      <form>
+        <input TYPE="HIDDEN" NAME="search" VALUE=""><BR><BR>
+        <input TYPE="SUBMIT" VALUE="Katalog">
+      </form>
       <form>
         <input TYPE="HIDDEN" NAME="search" VALUE=""><BR><BR>
         <input TYPE="SUBMIT" VALUE="Katalog">
