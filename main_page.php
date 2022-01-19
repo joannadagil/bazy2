@@ -42,8 +42,7 @@
 
       }
 
-      /*
-      .topnav a {
+      /*.topnav a {
         float: left;
         display: block;
         color: black;
@@ -95,13 +94,13 @@
         <input TYPE="HIDDEN" NAME="search" VALUE=""><BR><BR>
         <input TYPE="SUBMIT" VALUE="Katalog">
       </form>
-      <form>
+      <form ACTION="rankingi.php" METHOD="POST">
         <input TYPE="HIDDEN" NAME="search" VALUE=""><BR><BR>
-        <input TYPE="SUBMIT" VALUE="Katalog">
+        <input TYPE="SUBMIT" VALUE="Rankingi">
       </form>
-      <form>
+      <form ACTION="logowanie.php" METHOD="POST">
         <input TYPE="HIDDEN" NAME="search" VALUE=""><BR><BR>
-        <input TYPE="SUBMIT" VALUE="Katalog">
+        <input TYPE="SUBMIT" VALUE="Logowanie">
       </form>
     </div>
 
