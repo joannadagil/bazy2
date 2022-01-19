@@ -38,6 +38,7 @@
         padding: 10px;
         background: #ccc;
         border: none;
+        font-size: 40px;
 
       }
 
