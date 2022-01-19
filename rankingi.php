@@ -2,6 +2,26 @@
   <HEAD>
     <TITLE> Biblioteka - Rankingi </TITLE>
     <link rel="stylesheet" href="css/main.css">
+    <style> /* idk czemu ale jak to jest w css to nie działa, a navibar wciąz działa xd?*/
+      body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      }
+
+      /* Style the header */
+      .header {
+      padding: 80px;
+      text-align: center;
+      background: #1abc9c;
+      color: white;
+      }
+
+      /* Increase the font size of the h1 element */
+      .header h1 {
+      font-size: 40px;
+      }
+
+    </style>
   </HEAD>
   <BODY>
 
