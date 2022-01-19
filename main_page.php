@@ -3,7 +3,7 @@
     <TITLE> Main Page </TITLE>
     <link rel="stylesheet" href="css/main.css">
 
-    <style> /* idk czemu ale jak to jest w css to nie działa*/
+    <style> /* idk czemu ale jak to jest w css to nie działa, a navibar wciąz działa xd?*/
       body {
       font-family: Arial, Helvetica, sans-serif;
       margin: 0;
@@ -61,12 +61,9 @@
       <INPUT TYPE="SUBMIT" VALUE="Katalog">
     </FORM>
 
-    <a href="logowanie.php">Zaloguj się</a>
-    <a href="rankingi.php">Rankingi</a>
-    <a href="katalog.php">Katalog</a>
-
-
-
+    <p> <a href="logowanie.php">Zaloguj się</a> </p>
+    <p> <a href="rankingi.php">Rankingi</a> </p>
+    <P> <a href="katalog.php">Katalog</a> </p>
 
     <div class="footer">
       <p style="text-align:left;">
