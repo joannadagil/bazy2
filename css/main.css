@@ -74,7 +74,7 @@
 
   /* --------------------- header --------------------------------*/
 
-  .header {
+  .header_main {
     padding: 80px; /* some padding */
     text-align: center; /* center the text */
     background: #1abc9c; /* green background */
@@ -82,6 +82,6 @@
   }
   
   /* Increase the font size of the <h1> element */
-  .header h1 {
+  .header_main h1 {
     font-size: 40px;
   }

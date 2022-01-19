@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <HTML>
   <HEAD>
     <TITLE> Main Page </TITLE>
@@ -6,7 +5,7 @@
   </HEAD>
   <BODY>
 
-    <div class="header">
+    <div class="header_main">
       <h1>Biblioteka Publiczna</h1>
       <p>im. Ignacego Makowskiego i Joanny Dagil</p>
     </div>
