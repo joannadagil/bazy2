@@ -39,7 +39,7 @@
         background: #ccc;
         border: none;
         font-size: 30px;
-
+        width: 80%;
       }
 
       /*.topnav a {
@@ -90,18 +90,20 @@
     </div>
 
     <div class="mainnav">
+
       <form ACTION="katalog.php" METHOD="POST">
         <input TYPE="HIDDEN" NAME="search" VALUE=""><BR><BR>
         <input TYPE="SUBMIT" VALUE="Katalog">
       </form>
+
       <form ACTION="rankingi.php" METHOD="POST">
-        <input TYPE="HIDDEN" NAME="search" VALUE=""><BR><BR>
         <input TYPE="SUBMIT" VALUE="Rankingi">
       </form>
+
       <form ACTION="logowanie.php" METHOD="POST">
-        <input TYPE="HIDDEN" NAME="search" VALUE=""><BR><BR>
         <input TYPE="SUBMIT" VALUE="Logowanie">
       </form>
+
     </div>
 
     <FORM ACTION="katalog.php" METHOD="POST">
