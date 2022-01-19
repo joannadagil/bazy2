@@ -30,8 +30,9 @@
 
 
       /* -------------------- main navi -------------------- */
+
       .mainnav {
-        padding: 20px 50px;
+        padding: 20px 50px; 
       }
 
       .mainnav input[type=submit] {
@@ -41,24 +42,6 @@
         font-size: 30px;
         width: 100%;
       }
-
-      /*.topnav a {
-        float: left;
-        display: block;
-        color: black;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-      }
-      .topnav input[type=text] {
-        float: right;
-        padding: 6px;
-        border: none;
-        margin-top: 8px;
-        margin-right: 16px;
-        font-size: 17px;
-      }*/
 
     </style>
 
@@ -105,15 +88,6 @@
       </form>
 
     </div>
-
-    <FORM ACTION="katalog.php" METHOD="POST">
-      <INPUT TYPE="HIDDEN" NAME="search" VALUE=""><BR><BR>
-      <INPUT TYPE="SUBMIT" VALUE="Katalog">
-    </FORM>
-
-    <p> <a href="logowanie.php">Zaloguj się</a> </p>
-    <p> <a href="rankingi.php">Rankingi</a> </p>
-    <P> <a href="katalog.php">Katalog</a> </p>
 
     <div class="footer">
       <p style="text-align:left;">
