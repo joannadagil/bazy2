@@ -74,14 +74,14 @@
 
   /* --------------------- header --------------------------------*/
 
-  .header_main {
+  .header {
     padding: 80px; /* some padding */
     text-align: center; /* center the text */
     background: #1abc9c; /* green background */
     color: white; /* white text color */
   }
   
-  /* Increase the font size of the <h1> element
-  .header_main h1 {
+  /* Increase the font size of the <h1> element */
+  .header h1 {
     font-size: 40px;
-  } */
+  }

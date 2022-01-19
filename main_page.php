@@ -26,7 +26,7 @@
   </HEAD>
   <BODY>
 
-    <div class="header_main">
+    <div class="header">
       <h1>Biblioteka Publiczna</h1>
       <p>im. Ignacego Makowskiego i Joanny Dagil</p>
     </div>
