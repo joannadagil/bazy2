@@ -4,25 +4,29 @@
     <link rel="stylesheet" href="css/main.css">
 
     <style> /* idk czemu ale jak to jest w css to nie działa*/
+      body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      }
 
-        /* Style the header */
-        .header {
-        padding: 80px;
-        text-align: center;
-        background: #1abc9c;
-        color: white;
-        }
+      /* Style the header */
+      .header {
+      padding: 80px;
+      text-align: center;
+      background: #1abc9c;
+      color: white;
+      }
 
-        /* Increase the font size of the h1 element */
-        .header h1 {
-        font-size: 40px;
-        }
+      /* Increase the font size of the h1 element */
+      .header h1 {
+      font-size: 40px;
+      }
 
-        .footer {
-          padding: 20px; /* Some padding */
-          text-align: center; /* Center text*/
-          background: #ddd; /* Grey background */
-        }
+      .footer {
+        padding: 20px; /* Some padding */
+        text-align: center; /* Center text*/
+        background: #ddd; /* Grey background */
+      }
     </style>
 
   </HEAD>
