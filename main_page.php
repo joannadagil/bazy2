@@ -31,7 +31,7 @@
 
       /* -------------------- main navi -------------------- */
       .mainnav {
-        padding: 30px 50px;
+        padding: 20px 50px;
       }
 
       .mainnav input[type=submit] {
