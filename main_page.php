@@ -32,11 +32,6 @@
   </HEAD>
   <BODY>
 
-    <div class="header">
-      <h1>Biblioteka Publiczna</h1>
-      <p>im. Ignacego Makowskiego i Joanny Dagil</p>
-    </div>
-
     <?PHP
       session_start();
       $_SESSION['LOGIN'] = $_POST['LOGN'];
@@ -48,7 +43,18 @@
     	  $e = oci_error();
     	  echo $e['message'];
       }
-    ?>
+    ?>    
+
+    <div class="header">
+      <h1>Biblioteka Publiczna</h1>
+      <p>im. Ignacego Makowskiego i Joanny Dagil</p>
+    </div>
+
+    <div class="topnav">
+      <a class="active" href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
 
     <FORM ACTION="katalog.php" METHOD="POST">
       <INPUT TYPE="HIDDEN" NAME="search" VALUE=""><BR><BR>
@@ -59,16 +65,12 @@
     <a href="rankingi.php">Rankingi</a>
     <a href="katalog.php">Katalog</a>
 
-    <div class="topnav">
-      <a class="active" href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </div>
+
 
 
     <div class="footer">
       <p style="text-align:left;">
-        BBiblioteka Publiczna im. Ignacego Makowskiego i Joanny Dagil
+        Biblioteka Publiczna im. Ignacego Makowskiego i Joanny Dagil
         <span style="float:right;">
         All rights reserved
         </span>
