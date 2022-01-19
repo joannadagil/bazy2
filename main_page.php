@@ -2,6 +2,27 @@
   <HEAD>
     <TITLE> Main Page </TITLE>
     <link rel="stylesheet" href="css/main.css">
+
+    <style> /* idk czemu ale jak to jest w css to nie działa*/
+        body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        }
+
+        /* Style the header */
+        .header {
+        padding: 80px;
+        text-align: center;
+        background: #1abc9c;
+        color: white;
+        }
+
+        /* Increase the font size of the h1 element */
+        .header h1 {
+        font-size: 40px;
+        }
+    </style>
+
   </HEAD>
   <BODY>
 
@@ -48,6 +69,18 @@
     <a href="logowanie.php">Zaloguj się</a>
     <a href="rankingi.php">Rankingi</a>
     <a href="katalog.php">Katalog</a>
+
+    <div class="topnav">
+      <a class="active" href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <div class="search-container">
+        <form action="katalog.php">
+          <input type="text" placeholder="Search.." name="search">
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
 
   </BODY>
 </HTML>
