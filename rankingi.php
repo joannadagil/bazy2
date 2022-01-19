@@ -35,7 +35,7 @@
       }
 
       // Tworzenie wyrazenia SQL-owego. Uzycie fmurlak.naukowiec zamiast naukowiec pozwala na odczytanie tabeli inego uzytkownika.
-      $author_book_amount = oci_parse($conn, "SELECT aname, COUNT(*) AS amount FROM author JOIN authorship WHERE aid = idauthor GROUP BY aid ORDER BY amount FETCH FIRST 100 ROWS ONLY");
+      $author_book_amount = oci_parse($conn, "SELECT ROWNUM, aname, COUNT(*) AS amount FROM author JOIN authorship WHERE aid = idauthor GROUP BY aid ORDER BY amount FETCH FIRST 100 ROWS ONLY");
       // Wykonywanie wyrazenia SQL-owego
       oci_execute($author_book_amount, OCI_NO_AUTO_COMMIT);
     ?>
@@ -56,6 +56,7 @@
       while (($row = oci_fetch_array($author_book_amount, OCI_BOTH))) {
         ?>
         <tr>
+          <td><?php echo $row["ROWNUM"]; ?></td>
           <td><?php echo $row["aname"]; ?></td>
       	  <td><?php echo $row["amount"]; ?></td>
 	    </tr>
