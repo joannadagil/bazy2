@@ -31,7 +31,7 @@
 
       /* -------------------- main navi -------------------- */
       .mainnav {
-        padding: 20px;
+        padding: 50px;
       }
 
       .mainnav input[type=submit] {
@@ -39,7 +39,7 @@
         background: #ccc;
         border: none;
         font-size: 30px;
-        width: 80%;
+        width: 100%;
       }
 
       /*.topnav a {
