@@ -49,10 +49,5 @@
     <a href="rankingi.php">Rankingi</a>
     <a href="katalog.php">Katalog</a>
 
-    <div class="header">
-      <h1>Biblioteka Publiczna</h1>
-      <p>im. Ignacego Makowskiego i Joanny Dagil</p>
-    </div>
-
   </BODY>
 </HTML>
