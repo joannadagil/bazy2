@@ -56,7 +56,6 @@
       while (($row = oci_fetch_array($author_book_amount, OCI_BOTH))) {
         ?>
         <tr>
-          <td><?php echo $row["ROWNUM"]; ?></td>
           <td><?php echo $row["aname"]; ?></td>
       	  <td><?php echo $row["amount"]; ?></td>
 	    </tr>
