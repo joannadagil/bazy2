@@ -91,7 +91,7 @@
         <input TYPE="SUBMIT" VALUE="Rankingi">
       </form>
 
-      <form ACTION="logowanie.php" METHOD="POST">
+      <form ACTION="login_library.html" METHOD="POST">
         <input TYPE="SUBMIT" VALUE="Logowanie">
       </form>
 
