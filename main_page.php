@@ -27,6 +27,39 @@
         text-align: center; /* Center text*/
         background: #ddd; /* Grey background */
       }
+
+
+      /* -------------------- main navi -------------------- */
+      .mainnav {
+        padding: 20px;
+      }
+
+      .mainnav input[type=submit] {
+        padding: 10px;
+        background: #ccc;
+        border: none;
+
+      }
+
+      /*
+      .topnav a {
+        float: left;
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+      .topnav input[type=text] {
+        float: right;
+        padding: 6px;
+        border: none;
+        margin-top: 8px;
+        margin-right: 16px;
+        font-size: 17px;
+      }*/
+
     </style>
 
   </HEAD>
@@ -54,6 +87,13 @@
       <a class="active" href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
+    </div>
+
+    <div class="mainnav">
+      <form>
+        <input TYPE="HIDDEN" NAME="search" VALUE=""><BR><BR>
+        <input TYPE="SUBMIT" VALUE="Katalog">
+      </form>
     </div>
 
     <FORM ACTION="katalog.php" METHOD="POST">
