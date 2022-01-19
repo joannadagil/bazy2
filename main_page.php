@@ -37,6 +37,14 @@
 
       .mainnav input[type=submit] {
         padding: 30px;
+        background: #e9e9e9;
+        border: none;
+        font-size: 30px;
+        width: 100%;
+      }
+
+      .mainnav input[type=submit]:hover {
+        padding: 30px;
         background: #ccc;
         border: none;
         font-size: 30px;

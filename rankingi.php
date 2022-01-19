@@ -44,6 +44,8 @@
       <h1>Rankingi biblioteczne</h1>
     </div>
 
+    <p> Autorzy po ilości książek </p>
+
     <div class="topnav">
       <a class="active" href="#home">Home</a>
       <a href="#about">About</a>
