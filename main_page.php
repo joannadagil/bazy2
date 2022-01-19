@@ -35,10 +35,10 @@
       }
 
       .mainnav input[type=submit] {
-        padding: 10px;
+        padding: 30px;
         background: #ccc;
         border: none;
-        font-size: 40px;
+        font-size: 30px;
 
       }
 
