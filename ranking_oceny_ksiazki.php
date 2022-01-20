@@ -26,10 +26,11 @@
     </div>
 
     <div class="topnav">
-      <a class="active" href="#home">Home</a>
+      <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
       <a href="rankingi.php">Ilość książek</a>
+      <a class="active" href="ranking_oceny_ksiazki.php">Oceny książek</a>
     </div>
 
     <p> Ksiązki po ocenie </p>
@@ -39,7 +40,8 @@
         ?>
         <tr>
           <td><?php echo $row["BTITLE"]; ?></td>
-          
+          <td><?php echo $row["OCENA"]; ?></td>
+          <td><?php echo $row["ILOSC_OCEN"]; ?></td>
 	    </tr>
       <?php
       }

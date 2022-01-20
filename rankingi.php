@@ -26,9 +26,10 @@
     </div>
 
     <div class="topnav">
-      <a class="active" href="#home">Home</a>
+      <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
+      <a class="active" href="rankingi.php">Ilość książek</a>
       <a href="ranking_oceny_ksiazki.php">Oceny książek</a>
     </div>
 
