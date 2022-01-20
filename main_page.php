@@ -2,6 +2,28 @@
   <HEAD>
     <TITLE> Main Page </TITLE>
     <link rel="stylesheet" href="css/main.css">
+    <style>
+      /* -------------------- main navi -------------------- */
+      .mainnav {
+        padding: 20px 50px;
+      }
+
+      .mainnav input[type=submit] {
+        padding: 30px;
+        background: #e9e9e9;
+        border: none;
+        font-size: 30px;
+        width: 100%;
+      }
+
+      .mainnav input[type=submit]:hover {
+        padding: 30px;
+        background: #ccc;
+        border: none;
+        font-size: 30px;
+        width: 100%;
+      }
+    </style>
   </HEAD>
   <BODY>
 
@@ -32,16 +54,16 @@
     <div class="mainnav">
 
       <form ACTION="katalog.php" METHOD="POST">
-        <input class="mainnav" TYPE="HIDDEN" NAME="search" VALUE=""><BR><BR>
-        <input class="mainnav_input" TYPE="SUBMIT" VALUE="Katalog">
+        <input TYPE="HIDDEN" NAME="search" VALUE="">
+        <input TYPE="SUBMIT" VALUE="Katalog">
       </form>
 
       <form ACTION="rankingi.php" METHOD="POST">
-        <input class="mainnav_input" TYPE="SUBMIT" VALUE="Rankingi">
+        <input TYPE="SUBMIT" VALUE="Rankingi">
       </form>
 
       <form ACTION="login_library.html" METHOD="POST">
-        <input class="mainnav_input" TYPE="SUBMIT" VALUE="Logowanie">
+        <input TYPE="SUBMIT" VALUE="Logowanie">
       </form>
 
     </div>
