@@ -50,6 +50,7 @@
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </div>
+    
 
     <div class="mainnav">
 
