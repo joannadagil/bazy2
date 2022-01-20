@@ -29,8 +29,8 @@
 
     <?PHP
       session_start();
-      $_SESSION['LOGIN'] = $_POST['LOGN'];
-      $_SESSION['PASS'] = $_POST['PASW'];
+      $_SESSION['LOGIN'] = 'scott';
+      $_SESSION['PASS'] = 'tiger';
       $_SESSION['USER'] = $_POST['USER'];
       $conn = oci_connect($_SESSION['LOGIN'],$_SESSION['PASS'],"//labora.mimuw.edu.pl/LABS");
       if (!$conn) {
