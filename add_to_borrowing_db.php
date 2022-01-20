@@ -15,18 +15,12 @@
         $stmt = oci_parse($conn, $napis);
         oci_execute($stmt, OCI_NO_AUTO_COMMIT);
         oci_commit($conn);
-        echo "reserve";
+        header("Location: katalog.php");
+        exit;
       } else {
-        if (isset($_POST['reserve'])) {
-          echo $_POST['reserve'];
-        }
-        if (isset($_SESSION['USER'])) {
-          echo $_SESSION['USER'];
-        }
-        echo "dont reserve\n";
+        header("Location: login_library.php");
+        exit;
       }
-      //header("Location: katalog.php");
-      //exit;
   ?>
 </body>
 </html>
