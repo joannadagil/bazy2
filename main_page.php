@@ -2,37 +2,10 @@
   <HEAD>
     <TITLE> Main Page </TITLE>
     <link rel="stylesheet" href="css/main.css">
-
-    <style> /* idk czemu ale jak to jest w css to nie działa, a navibar wciąz działa xd?*/
-      body {
-      font-family: Arial, Helvetica, sans-serif;
-      margin: 0;
-      }
-
-      /* Style the header */
-      .header {
-      padding: 80px;
-      text-align: center;
-      background: #1abc9c;
-      color: white;
-      }
-
-      /* Increase the font size of the h1 element */
-      .header h1 {
-      font-size: 40px;
-      }
-
-      .footer {
-        padding: 20px; /* Some padding */
-        text-align: center; /* Center text*/
-        background: #ddd; /* Grey background */
-      }
-
-
+    <style>
       /* -------------------- main navi -------------------- */
-
       .mainnav {
-        padding: 20px 50px; 
+        padding: 20px 50px;
       }
 
       .mainnav input[type=submit] {
@@ -50,9 +23,7 @@
         font-size: 30px;
         width: 100%;
       }
-
     </style>
-
   </HEAD>
   <BODY>
 
@@ -67,7 +38,7 @@
     	  $e = oci_error();
     	  echo $e['message'];
       }
-    ?>    
+    ?>
 
     <div class="header">
       <h1>Biblioteka Publiczna</h1>
@@ -83,7 +54,7 @@
     <div class="mainnav">
 
       <form ACTION="katalog.php" METHOD="POST">
-        <input TYPE="HIDDEN" NAME="search" VALUE=""><BR><BR>
+        <input TYPE="HIDDEN" NAME="search" VALUE="">
         <input TYPE="SUBMIT" VALUE="Katalog">
       </form>
 

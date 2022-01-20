@@ -1,10 +1,12 @@
 <HTML>
   <HEAD>
-    <TITLE> Genealogia matematyczna - Naukowcy </TITLE>
+    <TITLE> Katalog </TITLE>
     <link rel="stylesheet" href="css/main.css">
   </HEAD>
   <BODY>
-    <H2> Naukowcy </H2>
+    <div class="header">
+      <h1>Katalog biblioteczny</h1>
+    </div>
     <?PHP
       session_start();
 
@@ -21,15 +23,6 @@
       // Wykonywanie wyrazenia SQL-owego
       oci_execute($stmt, OCI_NO_AUTO_COMMIT);
     ?>
-
-    <table>
-        <tr>
-          <td><?php echo "<p>SELECT * FROM BOOK WHERE BTITLE LIKE \'%".$search."%\' ORDER BY BID FETCH FIRST 100 ROWS ONLY<\p>" ?></td>
-      		<td><?php echo $row["BTITLE"]; ?></td>
-          <td><?php echo $row["ISBN"]; ?></td>
-	      </tr>
-      }
-    </table>
 
     <div class="topnav">
       <a class="active" href="#home">Home</a>
@@ -55,6 +48,6 @@
       }
     ?>
     </table>
-    
+
   </BODY>
 </HTML>
