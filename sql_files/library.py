@@ -38,23 +38,23 @@ for line in csv:
         author_id_dict[split_line[2]] = author_id_index
         author_id_index += 1
     authorship.write("INSERT INTO AUTHORSHIP VALUES (" + str(author_id_dict[split_line[2]]) + "," + split_line[0] + ");\n")
-    for i in range(random.randint(1, 11)):
+    for i in range(random.randint(1, 3)):
         bookinstance.write("INSERT INTO BOOKINSTANCE VALUES (" + str(bookinstance_id_index) + "," + split_line[0] + "," + str(random.randint(1, 5)) + ");\n")
         if random.choice([True, False]):
             random_number_of_days = random.randrange(days_between_dates)
             random_date = start_date + datetime.timedelta(days=random_number_of_days)
             if random.choice([True, False]):
-                borrowing.write("INSERT INTO BORROWING VALUES ( DATE '" + str(random_date) + "',NULL," + str(random.randint(1, 10000)) + "," + str(bookinstance_id_index) + ");\n")
+                borrowing.write("INSERT INTO BORROWING VALUES ( DATE '" + str(random_date) + "',NULL," + str(random.randint(1, 1000)) + "," + str(bookinstance_id_index) + ");\n")
             else:
                 time_between_dates2 = end_date - random_date
                 days_between_dates2 = time_between_dates2.days
                 random_number_of_days2 = random.randrange(days_between_dates2)
                 return_date = random_date + datetime.timedelta(days=random_number_of_days2)
-                borrowing.write("INSERT INTO BORROWING VALUES ( DATE '" + str(random_date) + "',DATE '" + str(return_date) + "'," + str(random.randint(1, 10000)) + "," + str(bookinstance_id_index) + ");\n")
+                borrowing.write("INSERT INTO BORROWING VALUES ( DATE '" + str(random_date) + "',DATE '" + str(return_date) + "'," + str(random.randint(1, 1000)) + "," + str(bookinstance_id_index) + ");\n")
         bookinstance_id_index += 1
-    for i in range(random.randint(1, 11)):
+    for i in range(random.randint(1, 2)):
         random_date = start_date + datetime.timedelta(days=random_number_of_days)
-        rating.write("INSERT INTO RATING VALUES (" + str(random.randint(0, 9)) + ",DATE '" + str(random_date) + "'," + str(random.randint(1, 10000)) + "," + split_line[0] + ");\n")
+        rating.write("INSERT INTO RATING VALUES (" + str(random.randint(0, 9)) + ",DATE '" + str(random_date) + "'," + str(random.randint(1, 1000)) + "," + split_line[0] + ");\n")
 
 for key in author_id_dict:
     authors.write("INSERT INTO AUTHOR VALUES (" + str(author_id_dict[key])+ ",'" + key + "');\n")
