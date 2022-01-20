@@ -29,6 +29,12 @@
       		<td><?php echo $row["TITL"]; ?></td>
           <td><?php echo $row["NAM"]; ?></td>
           <td><?php echo $row["ADRS"]; ?></td>
+          <td>
+            <form ACTION="add_to_borrowing_db.php" METHOD="POST">
+              <input TYPE="HIDDEN" NAME="reserve" VALUE="<?php echo $row["ID"];?>">
+              <input TYPE="SUBMIT" VALUE="Wypożycz">
+            </form>
+          </td>
 	      </tr>
       <?php
       }
