@@ -116,6 +116,7 @@ body {
 .container {
   padding: 16px;
   width: 50%;
+  float: center;
 }
 
 .container button {
