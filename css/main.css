@@ -118,6 +118,7 @@ body {
   width: 50%;
   float: center;
   text-align: center;
+  margin: auto;
 }
 
 .container button {
