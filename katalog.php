@@ -58,7 +58,8 @@
           <td><?php echo $row["ISBN"]; ?></td>
           <td>
             <form ACTION="wypozyczanie.php" METHOD="POST">
-              <input TYPE="SUBMIT" NAME="available" VALUE=<?php echo $row["BID"];?>>
+              <input TYPE="HIDDEN" NAME="available" VALUE=<?php echo $row["BID"];?>>
+              <input TYPE="SUBMIT" VALUE="Wypozyczanie">
             </form>
           </td>
 	      </tr>
