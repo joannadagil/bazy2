@@ -1,10 +1,12 @@
 <HTML>
   <HEAD>
-    <TITLE> Genealogia matematyczna - Naukowcy </TITLE>
+    <TITLE> Katalog </TITLE>
     <link rel="stylesheet" href="css/main.css">
   </HEAD>
   <BODY>
-    <H2> Naukowcy </H2>
+    <div class="header">
+      <h1>Katalog biblioteczny</h1>
+    </div>
     <?PHP
       session_start();
 
@@ -55,6 +57,6 @@
       }
     ?>
     </table>
-    
+
   </BODY>
 </HTML>
