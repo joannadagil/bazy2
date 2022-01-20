@@ -24,15 +24,6 @@
       oci_execute($stmt, OCI_NO_AUTO_COMMIT);
     ?>
 
-    <table>
-        <tr>
-          <td><?php echo "<p>SELECT * FROM BOOK WHERE BTITLE LIKE \'%".$search."%\' ORDER BY BID FETCH FIRST 100 ROWS ONLY<\p>" ?></td>
-      		<td><?php echo $row["BTITLE"]; ?></td>
-          <td><?php echo $row["ISBN"]; ?></td>
-	      </tr>
-      }
-    </table>
-
     <div class="topnav">
       <a class="active" href="#home">Home</a>
       <a href="#about">About</a>
