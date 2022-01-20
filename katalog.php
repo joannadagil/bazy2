@@ -57,7 +57,7 @@
       		<td><?php echo $row["BTITLE"]; ?></td>
           <td><?php echo $row["ISBN"]; ?></td>
           <td>
-            <form ACTION="wypozyczenie.php" METHOD="POST">
+            <form ACTION="wypozyczanie.php" METHOD="POST">
               <input TYPE="SUBMIT" VALUE="Rankingi">
               <input TYPE="HIDDEN" NAME="available" VALUE=<?php echo $row["BID"];?>>
             </form>
