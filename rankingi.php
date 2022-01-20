@@ -29,6 +29,7 @@
       <a class="active" href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
+      <a href="ranking_oceny_ksiazki.php">Oceny książek</a>
     </div>
 
     <p> Autorzy po ilości książek </p>
