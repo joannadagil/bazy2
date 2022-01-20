@@ -6,7 +6,7 @@
   </HEAD>
   <BODY>
     <div class="header">
-      <h1>Katalog biblioteczny</h1>
+      <h1>Wypożyczanie</h1>
     </div>
     <?PHP
       session_start();
