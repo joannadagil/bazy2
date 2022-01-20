@@ -34,6 +34,8 @@
 
     <p> Ksiązki po ocenie </p>
 
+    <p>  <?php echo $book_ratings ?>  </p>
+
     <table> <?PHP
       while (($row = oci_fetch_array($book_ratings, OCI_BOTH))) {
         ?>
