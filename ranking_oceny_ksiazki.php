@@ -34,11 +34,9 @@
 
     <p> Ksiązki po ocenie </p>
 
-    <p>  SELECT btitle, AVG(rate) as ocena, COUNT(*) as ilosc_ocen FROM BOOK JOIN RATING ON idbook=bid GROUP BY btitle, bid HAVING COUNT(*) >= 1 ORDER BY ocena DESC, ilosc_ocen DESC FETCH FIRST 100 ROWS ONLY  </p>
-    <?php $int = 0; ?>
     <table> <?PHP
       while (($row = oci_fetch_array($book_ratings, OCI_BOTH))) {
-        $int = $int + 1; ?>
+        ?>
         <tr>
           <td><?php echo $row["BTITLE"]; ?></td>
           
@@ -47,6 +45,5 @@
       }
     ?>
     </table>
-    <p> <?php echo $int ?> </p>
   </BODY>
 </HTML>
