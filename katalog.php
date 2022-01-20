@@ -2,6 +2,19 @@
   <HEAD>
     <TITLE> Katalog </TITLE>
     <link rel="stylesheet" href="css/main.css">
+    <style>
+      .topnav input[type=submit] {
+        float: right;
+        padding: 14px 16px;
+        border: none;
+        margin-top: 8px;
+        margin-right: 16px;
+        background: #e9e9e9;
+        border: none;
+        font-size: 30px;
+        width: 100%;
+      }
+    </style>
   </HEAD>
   <BODY>
     <div class="header">
