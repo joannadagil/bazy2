@@ -115,6 +115,7 @@ body {
 
 .container {
   padding: 16px;
+  width: 50%;
 }
 
 .container button {
