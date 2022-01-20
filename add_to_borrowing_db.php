@@ -15,12 +15,7 @@
         oci_commit($conn);
         echo "reserve";
       } else {
-        if (isset($_POST['reserved']) {
-          echo $_POST['reserved'];
-        }
-        if (isset($_SESSION['USER'])) {
-          echo $_SESSION['USER'];
-        }
+        
         echo "dont reserve\n";
       }
       //header("Location: katalog.php");
