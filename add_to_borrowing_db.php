@@ -3,7 +3,7 @@
   <?php
       session_start();
       if (isset($_POST['reserve']) && isset($_SESSION['USER'])) {
-        $reserved = $_POST['reserved'];
+        $reserved = $_POST['reserve'];
         $conn = oci_connect($_SESSION['LOGIN'],$_SESSION['PASS'],"//labora.mimuw.edu.pl/LABS");
         if (!$conn) {
           echo "oci_connect failed\n";
