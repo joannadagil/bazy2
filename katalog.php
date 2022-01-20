@@ -56,11 +56,11 @@
           <td><?php echo $row["BID"]; ?></td>
       		<td><?php echo $row["BTITLE"]; ?></td>
           <td><?php echo $row["ISBN"]; ?></td>
-          <div>
+          <td>
             <form ACTION="rankingi.php" METHOD="POST">
               <input TYPE="SUBMIT" VALUE="Rankingi">
             </form>
-          </div>
+          </td>
 	      </tr>
       <?php
       }
