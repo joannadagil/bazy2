@@ -32,16 +32,16 @@
     <div class="mainnav">
 
       <form ACTION="katalog.php" METHOD="POST">
-        <input TYPE="HIDDEN" NAME="search" VALUE=""><BR><BR>
-        <input TYPE="SUBMIT" VALUE="Katalog">
+        <input class="mainnav" TYPE="HIDDEN" NAME="search" VALUE=""><BR><BR>
+        <input class="mainnav" TYPE="SUBMIT" VALUE="Katalog">
       </form>
 
       <form ACTION="rankingi.php" METHOD="POST">
-        <input TYPE="SUBMIT" VALUE="Rankingi">
+        <input class="mainnav" TYPE="SUBMIT" VALUE="Rankingi">
       </form>
 
       <form ACTION="login_library.html" METHOD="POST">
-        <input TYPE="SUBMIT" VALUE="Logowanie">
+        <input class="mainnav" TYPE="SUBMIT" VALUE="Logowanie">
       </form>
 
     </div>
