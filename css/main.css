@@ -90,6 +90,28 @@ tr:nth-child(even) {
   }
 }
 
+/* -------------------- main navi -------------------- */
+
+.mainnav {
+  padding: 20px 50px;
+}
+
+.mainnav input[type=submit] {
+  padding: 30px;
+  background: #e9e9e9;
+  border: none;
+  font-size: 30px;
+  width: 100%;
+}
+
+.mainnav input[type=submit]:hover {
+  padding: 30px;
+  background: #ccc;
+  border: none;
+  font-size: 30px;
+  width: 100%;
+}
+
 /* -------------------------- footer --------------------------- */
 
 .footer {
@@ -97,5 +119,3 @@ tr:nth-child(even) {
   text-align: center; /* Center text*/
   background: #ddd; /* Grey background */
 }
-
-
