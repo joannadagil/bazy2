@@ -12,8 +12,9 @@
         }
         $stmt = oci_parse($conn,"INSERT INTO BORROWING VALUES (CURRENT_DATE, NULL, ".$_SESSION['USER'].", ".$_reserved.")");
         oci_execute($stmt, OCI_NO_AUTO_COMMIT);
+        oci_commit($conn);
       }
-      header("katalog.php");
+      header("Location: katalog.php");
       exit;
   ?>
 </body>
