@@ -11,14 +11,13 @@
           echo $e['message'];
         }
         $napis = "INSERT INTO BORROWING VALUES (CURRENT_DATE, NULL,".$_SESSION['USER'].",".$res.")";
-        echo $napis;
         $stmt = oci_parse($conn, $napis);
         oci_execute($stmt, OCI_NO_AUTO_COMMIT);
         oci_commit($conn);
         header("Location: katalog.php");
         exit;
       } else {
-        header("Location: login_library.php");
+        header("Location: login_library.html");
         exit;
       }
   ?>
