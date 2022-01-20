@@ -10,7 +10,9 @@
           $e = oci_error();
           echo $e['message'];
         }
-        $stmt = oci_parse($conn,"INSERT INTO BORROWING VALUES (CURRENT_DATE, NULL, ".$_SESSION['USER'].", ".$_reserved.")");
+        $napis = "INSERT INTO BORROWING VALUES (CURRENT_DATE, NULL,".$_SESSION['USER'].",".$_reserved.")";
+        echo $napis;
+        $stmt = oci_parse($conn, $napis);
         oci_execute($stmt, OCI_NO_AUTO_COMMIT);
         oci_commit($conn);
         echo "reserve";
