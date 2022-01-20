@@ -59,6 +59,7 @@
           <td>
             <form ACTION="rankingi.php" METHOD="POST">
               <input TYPE="SUBMIT" VALUE="Rankingi">
+              <input TYPE="HIDDEN" NAME="available" VALUE=<?php echo $row["BID"];?>>
             </form>
           </td>
 	      </tr>
