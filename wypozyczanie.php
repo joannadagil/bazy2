@@ -1,9 +1,11 @@
 <html>
 <body>
 
-<h1>My First Heading</h1>
+<div class="header">
+  <h1>Wypożyczanie</h1>
+</div>
 
-<p><?php echo $_GET["available"]; ?></p>
+<p><?php session_start(); echo $_POST["available"]; ?></p>
 
 </body>
 </html>
