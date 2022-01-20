@@ -10,13 +10,17 @@
     </div>
     <?PHP
       session_start();
+      if (!isset($_SESSION['USER'])) {
+        header("Location: login_library.html");
+        exit;
+      }
       $conn = oci_connect($_SESSION['LOGIN'],$_SESSION['PASS'],"//labora.mimuw.edu.pl/LABS");
       if (!$conn) {
         echo "oci_connect failed\n";
         $e = oci_error();
         echo $e['message'];
       }
-      $stmt = oci_parse($conn,"SELECT BI.BIID AS ID, B.BTITLE AS TITL, D.DNAME AS NAM, D.DADDRESS AS ADRS FROM BOOK B, BOOKINSTANCE BI, DEPARTMENT D , BORROWING BR WHERE BI.BOOK = B.BID AND BI.DEPARTMENT = D.DID AND BR.IDBOOK = BI.BIID AND BR.RETURN IS NULL AND BR.IDLENDER = \'".$_SESSION['USER']."\'ORDER BY BI.BIID FETCH FIRST 100 ROWS ONLY");
+      $stmt = oci_parse($conn,"SELECT BI.BIID AS ID, B.BTITLE AS TITL, D.DNAME AS NAM, D.DADDRESS AS ADRS FROM BOOK B, BOOKINSTANCE BI, DEPARTMENT D , BORROWING BR WHERE BI.BOOK = B.BID AND BI.DEPARTMENT = D.DID AND BR.IDBOOK = BI.BIID AND BR.RETURN IS NULL AND BR.IDLENDER = ".$_SESSION['USER']."ORDER BY BI.BIID FETCH FIRST 100 ROWS ONLY");
       oci_execute($stmt, OCI_NO_AUTO_COMMIT);
     ?>
 
