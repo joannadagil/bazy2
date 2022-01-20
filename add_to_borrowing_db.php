@@ -2,7 +2,7 @@
 <body>
   <?php
       session_start();
-      if (isset($_POST['reserved']) && isset($_SESSION['USER'])) {
+      if (isset($_POST['reserve']) && isset($_SESSION['USER'])) {
         $reserved = $_POST['reserved'];
         $conn = oci_connect($_SESSION['LOGIN'],$_SESSION['PASS'],"//labora.mimuw.edu.pl/LABS");
         if (!$conn) {
@@ -15,7 +15,7 @@
         oci_commit($conn);
         echo "reserve";
       } else {
-        if (isset($_POST['reserved'])) {
+        if (isset($_POST['reserve'])) {
           echo $_POST['reserved'];
         }
         if (isset($_SESSION['USER'])) {
