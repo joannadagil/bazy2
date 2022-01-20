@@ -39,7 +39,7 @@ for line in csv:
         author_id_index += 1
     authorship.write("INSERT INTO AUTHORSHIP VALUES (" + str(author_id_dict[split_line[2]]) + "," + split_line[0] + ");\n")
     for i in range(random.randint(1, 11)):
-        bookinstance.write("INSERT INTO BOOKINSTANCE VALUES (" + str(bookinstance_id_index) + "," + split_line[0] + ");\n")
+        bookinstance.write("INSERT INTO BOOKINSTANCE VALUES (" + str(bookinstance_id_index) + "," + split_line[0] + "," + str(random.randint(1, 5)) + ");\n")
         if random.choice([True, False]):
             random_number_of_days = random.randrange(days_between_dates)
             random_date = start_date + datetime.timedelta(days=random_number_of_days)
