@@ -119,7 +119,7 @@ body {
   margin: auto;
 }
 
-.container button {
+.container input[type=submit] {
   background-color: #04AA6D;
   color: white;
   padding: 14px 20px;
