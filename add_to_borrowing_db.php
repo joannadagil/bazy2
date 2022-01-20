@@ -10,7 +10,6 @@
           $e = oci_error();
           echo $e['message'];
         }
-        INSERT INTO BORROWING VALUES ( DATE '2013-06-04',NULL,392,30);
         $stmt = oci_parse($conn,"INSERT INTO BORROWING VALUES (CURRENT_DATE, NULL, ".$_SESSION['USER'].", ".$_reserved.")");
         oci_execute($stmt, OCI_NO_AUTO_COMMIT);
       }
