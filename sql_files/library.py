@@ -17,7 +17,7 @@ member = open('member.sql', 'w')
 rating = open('rating.sql', 'w')
 borrowing = open('borrowing.sql', 'w')
 
-#genres = ['Action and Adventure', 'Comic Book', 'Detective and Mystery', 'Fantasy', 'Historical Fiction', 'Horror', 'Literary Fiction', 'Romance', 'Science Fiction', 'Short Stories', 'Thrillers', 'Biographies', 'Cookbooks', 'History']
+genres = ['Action and Adventure', 'Comic Book', 'Detective and Mystery', 'Fantasy', 'Historical Fiction', 'Horror', 'Literary Fiction', 'Romance', 'Science Fiction', 'Short Stories', 'Thrillers', 'Biographies', 'Cookbooks', 'History']
 #books.write("set transaction isolation level serializable;\n")
 #authors.write("set transaction isolation level serializable;\n")
 #authorship.write("set transaction isolation level serializable;\n")
