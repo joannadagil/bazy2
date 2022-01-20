@@ -1,4 +1,3 @@
-set transaction isolation level serializable;
 INSERT INTO BOOK VALUES (1,'Harry Potter and the Half-Blood Prince (Harry Potter  #6)','0439785960',9780439785969,'Historical Fiction');
 INSERT INTO BOOK VALUES (2,'Harry Potter and the Order of the Phoenix (Harry Potter  #5)','0439358078',9780439358071,'Biographies');
 INSERT INTO BOOK VALUES (4,'Harry Potter and the Chamber of Secrets (Harry Potter  #2)','0439554896',9780439554893,'Comic Book');

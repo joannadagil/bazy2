@@ -1,4 +1,3 @@
-set transaction isolation level serializable;
 INSERT INTO AUTHOR VALUES (1,'J.K. Rowling/Mary GrandPré');
 INSERT INTO AUTHOR VALUES (2,'J.K. Rowling');
 INSERT INTO AUTHOR VALUES (3,'W. Frederick Zimmerman');

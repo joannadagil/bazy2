@@ -1,4 +1,3 @@
-set transaction isolation level serializable;
 INSERT INTO DEPARTMENT VALUES (1,'Warsaw Public Library','Koszykowa 26/28, 00-950 Warszawa');
 INSERT INTO DEPARTMENT VALUES (2,'Library on Żytnia street','Żytnia 64, 01-156 Warszawa');
 INSERT INTO DEPARTMENT VALUES (3,'Warsaw University Library','Dobra 56/66, 00-312 Warszawa');
