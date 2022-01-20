@@ -44,7 +44,7 @@ for line in csv:
             random_number_of_days = random.randrange(days_between_dates)
             random_date = start_date + datetime.timedelta(days=random_number_of_days)
             if random.choice([True, False]):
-                borrowing.write("INSERT INTO BORROWING VALUES ( DATE '" + str(random_date) + "'," + "," + str(random.randint(1, 10000)) + "," + str(bookinstance_id_index) + ");\n")
+                borrowing.write("INSERT INTO BORROWING VALUES ( DATE '" + str(random_date) + "',NULL," + str(random.randint(1, 10000)) + "," + str(bookinstance_id_index) + ");\n")
             else:
                 time_between_dates2 = end_date - random_date
                 days_between_dates2 = time_between_dates2.days
