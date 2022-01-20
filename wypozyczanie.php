@@ -5,7 +5,7 @@
   <h1>Wypożyczanie</h1>
 </div>
 
-<p><?php session_start(); echo $_GET["available"]; ?></p>
+<p><?php session_start(); echo $_POST["available"]; ?></p>
 
 </body>
 </html>
