@@ -3,14 +3,14 @@
   <?php
       session_start();
       if (isset($_POST['reserve']) && isset($_SESSION['USER'])) {
-        $reserved = $_POST['reserve'];
+        $res = $_POST['reserve'];
         $conn = oci_connect($_SESSION['LOGIN'],$_SESSION['PASS'],"//labora.mimuw.edu.pl/LABS");
         if (!$conn) {
           echo "oci_connect failed\n";
           $e = oci_error();
           echo $e['message'];
         }
-        $napis = "INSERT INTO BORROWING VALUES (CURRENT_DATE, NULL,".$_SESSION['USER'].",".$_reserved.")";
+        $napis = "INSERT INTO BORROWING VALUES (CURRENT_DATE, NULL,".$_SESSION['USER'].",".$res.")";
         echo $napis;
         $stmt = oci_parse($conn, $napis);
         oci_execute($stmt, OCI_NO_AUTO_COMMIT);
@@ -18,7 +18,7 @@
         echo "reserve";
       } else {
         if (isset($_POST['reserve'])) {
-          echo $_POST['reserved'];
+          echo $_POST['reserve'];
         }
         if (isset($_SESSION['USER'])) {
           echo $_SESSION['USER'];
