@@ -2,6 +2,7 @@
   <HEAD>
     <TITLE> Main Page </TITLE>
     <link rel="stylesheet" href="css/main.css">
+    <meta charset="utf-8">
     <style>
       /* -------------------- main navi -------------------- */
       .mainnav {

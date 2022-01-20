@@ -2,6 +2,7 @@
   <HEAD>
     <TITLE> Katalog </TITLE>
     <link rel="stylesheet" href="css/main.css">
+    <meta charset="utf-8">
   </HEAD>
   <BODY>
     <div class="header">
