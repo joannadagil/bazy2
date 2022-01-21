@@ -9,7 +9,7 @@
         padding: 0;
       }
       .rate {
-        border: 1px solid #cccccc;
+        border: /*1px solid #cccccc*/ none;
         float: left;
         height: 46px;
         padding: 0 10px;
@@ -58,15 +58,20 @@
 
       input[type=submit] {
         border: none;
-        float: center;
+        cursor: pointer;
         width: 100%;
+
+        float: center;
         /*padding: 6px;
         margin-top: 8px;
         margin-right: 16px;*/
         background: #ddd;
         font-size: 17px;
-        border: none;
-        cursor: pointer;
+        
+        /*background-color: #04AA6D;*/
+        padding: 14px 20px;
+        margin: 8px 0;
+        
       }
 
       input[type=submit]:hover {
@@ -96,7 +101,7 @@
     ?>
 
     <div class="topnav">
-      <a href="#home">Strona główna</a>
+      <a href="main_page.php">Strona główna</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
       <div class="search-container">
