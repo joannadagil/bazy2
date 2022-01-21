@@ -60,10 +60,10 @@
         border: none;
         cursor: pointer;
         width: 100%;
+        padding: 6px;
 
         float: center;
-        /*padding: 6px;
-        margin-top: 8px;
+        /*margin-top: 8px;
         margin-right: 16px;*/
         background: #ddd;
         font-size: 17px;
