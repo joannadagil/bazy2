@@ -59,10 +59,10 @@
       table td input[type=submit] {
         border: none;
         cursor: pointer;
-        width: 99%;
+        width: 100%;
         background: #ccc;
         font-size: 17px;
-        /*padding: 6px;*/
+        padding: 6px;
         /*float: center;*/
       }
 
