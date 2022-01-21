@@ -69,7 +69,6 @@
         font-size: 17px;
         
         /*background-color: #04AA6D;*/
-        padding: 14px 20px;
         margin: 8px 0;
         
       }
