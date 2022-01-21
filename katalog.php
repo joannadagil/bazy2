@@ -55,6 +55,22 @@
         font-size: 30px;
         width: 100%;
       }
+
+      input[type=submit] {
+        border: none;
+        /*float: right;*/
+        padding: 6px;
+        margin-top: 8px;
+        margin-right: 16px;
+        background: #ddd;
+        font-size: 17px;
+        border: none;
+        cursor: pointer;
+      }
+
+      input[type=submit]:hover {
+        background: #ccc;
+      }
     </style>
   </HEAD>
   <BODY>
