@@ -63,7 +63,7 @@
         /*padding: 6px;*/
         box-sizing: border-box;
 
-        float: center;
+        /*float: center;*/
         /*margin-top: 8px;
         margin-right: 16px;*/
         background: #ccc;
