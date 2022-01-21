@@ -26,12 +26,12 @@
     </div>
 
     <div class="topnav">
-      <a href="#home">Home</a>
+      <a href="main_page.php">Strona główna</a>
       <a class="active" href="rankingi.php">Ilość książek</a>
       <a href="ranking_oceny_ksiazki.php">Oceny książek</a>
     </div>
 
-    <p> Autorzy po ilości książek </p>
+    <p> Ranking autorów względem ilości książek posiadanych przez bibliotekę </p>
 
     <table> <?PHP
       while (($row = oci_fetch_array($author_book_amount, OCI_BOTH))) {
