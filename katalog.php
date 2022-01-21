@@ -79,7 +79,7 @@
     ?>
 
     <div class="topnav">
-      <a class="active" href="#home">Home</a>
+      <a href="#home">Strona główna</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
       <div class="search-container">

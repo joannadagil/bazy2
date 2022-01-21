@@ -21,6 +21,22 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
+input[type=submit] {
+  border: none;
+  /*float: right;*/
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background: #ccc;
+}
+
 /* --------------------- header --------------------------------*/
 
 .header {
@@ -60,7 +76,7 @@ body {
 }
 
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: #ccc;
   color: black;
 }
 
