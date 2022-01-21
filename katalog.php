@@ -65,7 +65,7 @@
         float: center;
         /*margin-top: 8px;
         margin-right: 16px;*/
-        background: #ddd;
+        background: #ccc;
         font-size: 17px;
         
         /*background-color: #04AA6D;*/
