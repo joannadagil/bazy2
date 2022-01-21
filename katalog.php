@@ -59,18 +59,11 @@
       table td input[type=submit] {
         border: none;
         cursor: pointer;
-        width: 100%;
-        /*padding: 6px;*/
-        box-sizing: border-box;
-        display: block;
-
-        /*float: center;*/
-        /*margin-top: 8px;
-        margin-right: 16px;*/
+        width: 99%;
         background: #ccc;
         font-size: 17px;
-        
-        /*background-color: #04AA6D;*/
+        /*padding: 6px;*/
+        /*float: center;*/
       }
 
       input[type=submit]:hover {
@@ -83,6 +76,7 @@
         width: 100%;
         padding: 0px 15px;
       }
+
     </style>
   </HEAD>
   <BODY>
