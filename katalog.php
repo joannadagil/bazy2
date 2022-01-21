@@ -60,7 +60,7 @@
         border: none;
         cursor: pointer;
         width: 100%;
-        padding: 6px;
+        /*padding: 6px;*/
         box-sizing: border-box;
 
         float: center;
