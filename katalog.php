@@ -56,7 +56,7 @@
         width: 100%;
       }
 
-      input[type=submit] {
+      table td input[type=submit] {
         border: none;
         cursor: pointer;
         width: 100%;
