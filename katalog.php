@@ -62,6 +62,7 @@
         width: 100%;
         /*padding: 6px;*/
         box-sizing: border-box;
+        display: block;
 
         /*float: center;*/
         /*margin-top: 8px;
