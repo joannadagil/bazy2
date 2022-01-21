@@ -61,6 +61,7 @@
         cursor: pointer;
         width: 100%;
         padding: 6px;
+        box-sizing: border-box;
 
         float: center;
         /*margin-top: 8px;
@@ -69,8 +70,6 @@
         font-size: 17px;
         
         /*background-color: #04AA6D;*/
-        margin: 8px 0;
-        
       }
 
       input[type=submit]:hover {
