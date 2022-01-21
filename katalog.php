@@ -58,10 +58,11 @@
 
       input[type=submit] {
         border: none;
-        /*float: right;*/
-        padding: 6px;
+        float: center;
+        width: 100%;
+        /*padding: 6px;
         margin-top: 8px;
-        margin-right: 16px;
+        margin-right: 16px;*/
         background: #ddd;
         font-size: 17px;
         border: none;
