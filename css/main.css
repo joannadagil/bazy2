@@ -18,7 +18,7 @@ td, th {
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: #e9e9e9;
 }
 
 input[type=submit] {
