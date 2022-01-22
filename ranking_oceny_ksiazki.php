@@ -37,7 +37,7 @@
       <a class="active" href="ranking_oceny_ksiazki.php">Oceny książek</a>
     </div>
 
-    <p> Ksiązki po ocenie </p>
+    <h2> Ranking książek wg. ocen </h2>
 
     <table> 
       <thead>
