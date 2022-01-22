@@ -7,7 +7,7 @@
       thead {
         background-color: #1abc9c;
         color: white;
-        font-size: 10px;
+        font-size: 20px;
       }
     </style>
   </HEAD>
