@@ -34,11 +34,13 @@
     <p> Ksiązki po ocenie </p>
 
     <table> 
-      <tr background-color="#1abc9c">
-        <td> Tytuł </td>
-        <td> Średnia ocena </td>
-        <td> Ilość ocen </td>
-      </tr>
+      <thead>
+        <tr background-color="#1abc9c">
+          <td> Tytuł </td>
+          <td> Średnia ocena </td>
+          <td> Ilość ocen </td>
+        </tr>
+      </thead>
       <?PHP
       while (($row = oci_fetch_array($book_ratings, OCI_BOTH))) {
         ?>
