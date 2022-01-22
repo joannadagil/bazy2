@@ -37,7 +37,7 @@
       <a class="active" href="ranking_oceny_ksiazki.php">Oceny książek</a>
     </div>
 
-    <h2 float="center"> Ranking książek wg. ocen </h2>
+    <h2 text-align="center"> Ranking książek wg. ocen </h2>
 
     <table> 
       <thead>
