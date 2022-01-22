@@ -44,6 +44,10 @@
       oci_execute($stmt, OCI_NO_AUTO_COMMIT);
     ?>
 
+    <div class="topnav">
+      <a href="main_page.php">Strona główna</a>
+    </div>
+
     <table> <?PHP
       while (($row = oci_fetch_array($stmt, OCI_BOTH))) {
         ?>
