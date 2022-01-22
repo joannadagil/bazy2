@@ -34,7 +34,7 @@
     <p> Ksiązki po ocenie </p>
 
     <table> 
-      <thead background-color="#1abc9c">
+      <thead>
         <tr>
           <td> Tytuł </td>
           <td> Średnia ocena </td>

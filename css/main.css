@@ -11,6 +11,10 @@ table {
   padding: 0px 15px;
 }
 
+thead {
+  background-color: #1abc9c;
+}
+
 td, th {
   border: 1px solid #e9e9e9;
   text-align: left;
