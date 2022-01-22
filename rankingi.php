@@ -3,6 +3,16 @@
     <TITLE> Biblioteka - Rankingi </TITLE>
     <link rel="stylesheet" href="css/main.css">
     <meta charset="utf-8">
+    <style>
+      thead {
+        background-color: #1abc9c;
+        color: white;
+        font-size: 19px;
+      }
+      h2 {
+        text-align: center;
+      }
+    </style>
   </HEAD>
   <BODY>
 
