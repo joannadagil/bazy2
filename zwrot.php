@@ -21,6 +21,7 @@
         border-collapse: collapse;
         width: 90%;
         padding: 0px 15px;
+        float: center;
       }
     </style>
   </HEAD>
