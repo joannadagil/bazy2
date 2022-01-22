@@ -6,6 +6,8 @@
     <style>
       thead {
         background-color: #1abc9c;
+        color: white;
+        font-size: 10px;
       }
     </style>
   </HEAD>
