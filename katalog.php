@@ -8,6 +8,11 @@
         margin: 0;
         padding: 0;
       }
+      thead {
+        background-color: #1abc9c;
+        color: white;
+        font-size: 19px;
+      }
       .rate {
         border: /*1px solid #cccccc*/ none;
         float: left;
