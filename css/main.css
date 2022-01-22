@@ -28,7 +28,7 @@ table td input[type=submit] {
   background: #ccc;
   font-size: 17px;
   padding: 6px;
-  /*float: center;*/
+  float: center;
 }
 
 input[type=submit]:hover {
