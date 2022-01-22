@@ -42,7 +42,7 @@
       <?PHP
       while (($row = oci_fetch_array($book_ratings, OCI_BOTH))) {
         ?>
-        <tr>
+        <tr background-color="#1abc9c">
           <td><?php echo $row["BTITLE"]; ?></td>
           <td text-align="center"><?php echo $row["OCENA"]; ?></td>
           <td text-align="center"><?php echo $row["ILOSC_OCEN"]; ?></td>
