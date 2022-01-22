@@ -45,7 +45,7 @@
         <tr>
           <td><?php echo $row["BTITLE"]; ?></td>
           <td text-align=center><?php echo $row["OCENA"]; ?></td>
-          <td text-align=center><?php echo $row["ILOSC_OCEN"]; ?></td>
+          <td text-align="center"><?php echo $row["ILOSC_OCEN"]; ?></td>
 	    </tr>
       <?php
       }
