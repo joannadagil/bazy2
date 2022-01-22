@@ -16,6 +16,12 @@
       input[type=submit]:hover {
         background: #ccc;
       }
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 90%;
+        padding: 0px 15px;
+      }
     </style>
   </HEAD>
   <BODY>
