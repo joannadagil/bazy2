@@ -14,6 +14,7 @@ table {
 thead {
   background-color: #1abc9c;
   color: white;
+  font-size: 19px;
 }
 
 td, th {
@@ -34,6 +35,10 @@ table td input[type=submit] {
   font-size: 17px;
   padding: 6px;
   float: center;
+}
+
+h2 {
+  text-align: center;
 }
 
 input[type=submit]:hover {

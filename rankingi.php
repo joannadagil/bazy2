@@ -31,9 +31,17 @@
       <a href="ranking_oceny_ksiazki.php">Oceny książek</a>
     </div>
 
-    <p> Ranking autorów względem ilości książek posiadanych przez bibliotekę </p>
+    <h2> Ranking autorów względem ilości książek posiadanych przez bibliotekę </h2>
 
-    <table> <?PHP
+    <table> 
+    <thead>
+        <tr>
+          <td> Miejsce </td>
+          <td> Tytuł </td>
+          <td> Ilość książek </td>
+        </tr>
+      </thead>
+      <?PHP
       while (($row = oci_fetch_array($author_book_amount, OCI_BOTH))) {
         ?>
         <tr>
