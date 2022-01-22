@@ -154,6 +154,13 @@
       }
     ?>
     </table>
-
+    <div class="footer">
+      <p style="text-align:left;">
+        Biblioteka Publiczna im. Ignacego Makowskiego i Joanny Dagil
+        <span style="float:right;">
+        All rights reserved
+        </span>
+      </p>
+    </div>
   </BODY>
 </HTML>
