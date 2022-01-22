@@ -67,7 +67,7 @@
       }
 
       input[type=submit]:hover {
-        background: #ccc;
+        background: #bbb;
       }
 
       table {
