@@ -44,7 +44,7 @@
     <h2> Ranking autorów względem ilości książek posiadanych przez bibliotekę </h2>
 
     <table> 
-    <thead>
+      <thead>
         <tr>
           <td> Miejsce </td>
           <td> Tytuł </td>

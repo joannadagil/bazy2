@@ -112,7 +112,17 @@
       </div>
     </div>
 
-    <table> <?PHP
+    <table> 
+      <thead>
+        <tr>
+          <td> ID </td>
+          <td> Tytuł </td>
+          <td> ISBN </td>
+          <td> Wypożyczanie </td>
+          <td> Ocenianie </td>
+        </tr>
+      </thead>
+      <?PHP
       while (($row = oci_fetch_array($stmt, OCI_BOTH))) {
         ?>
         <tr>
