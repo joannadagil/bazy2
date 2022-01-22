@@ -14,7 +14,7 @@
         float: center;
       }
       input[type=submit]:hover {
-        background: #ccc;
+        background: #bbb;
       }
       table {
         font-family: arial, sans-serif;

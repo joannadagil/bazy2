@@ -32,7 +32,7 @@ table td input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background: #ccc;
+  background: #bbb;
 }
 
 /* --------------------- header --------------------------------*/
