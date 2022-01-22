@@ -8,6 +8,9 @@
         background-color: #1abc9c;
         color: white;
       }
+      h2 {
+        text-align: center;
+      }
     </style>
   </HEAD>
   <BODY>
@@ -37,7 +40,7 @@
       <a class="active" href="ranking_oceny_ksiazki.php">Oceny książek</a>
     </div>
 
-    <h2 text-align="center"> Ranking książek wg. ocen </h2>
+    <h2> Ranking książek wg. ocen </h2>
 
     <table> 
       <thead>
