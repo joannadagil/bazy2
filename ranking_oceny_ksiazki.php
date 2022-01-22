@@ -7,6 +7,7 @@
       thead {
         background-color: #1abc9c;
         color: white;
+        font-size: 19px;
       }
       h2 {
         text-align: center;
