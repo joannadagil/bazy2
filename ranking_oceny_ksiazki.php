@@ -34,7 +34,7 @@
     <p> Ksiązki po ocenie </p>
 
     <table> 
-      <tr>
+      <tr background-color="#1abc9c">
         <td> Tytuł </td>
         <td> Średnia ocena </td>
         <td> Ilość ocen </td>
@@ -42,7 +42,7 @@
       <?PHP
       while (($row = oci_fetch_array($book_ratings, OCI_BOTH))) {
         ?>
-        <tr background-color="#1abc9c">
+        <tr>
           <td><?php echo $row["BTITLE"]; ?></td>
           <td text-align="center"><?php echo $row["OCENA"]; ?></td>
           <td text-align="center"><?php echo $row["ILOSC_OCEN"]; ?></td>
