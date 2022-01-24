@@ -53,7 +53,7 @@
     </div>
 
 
-    <H2> Witaj, <php? $NAME ?></H2>
+    <H2> Witaj, <?php $NAME ?></H2>
 
     <div class="footer">
       <p style="text-align:left;">
