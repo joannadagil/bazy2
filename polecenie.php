@@ -23,9 +23,9 @@
         padding: 0px 15px;
       }
       .header2 {
-        padding: 30px; /* some padding */
+        padding: 16px; /* some padding */
         text-align: center; /* center the text */
-        background: #1abc9c; /* green background */
+        background: #e9e9e9; /* green background */
         color: white; /* white text color */
         width: 50%;
         margin: auto;
