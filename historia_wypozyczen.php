@@ -50,7 +50,17 @@
       <a class="active" href="histria_wypozyczen.php">Historia wypożyczeń</a>
     </div>
 
-    <table> <?PHP
+    <table> 
+      <thead>
+        <tr>
+          <td> ID </td>
+          <td> Tytuł </td>
+          <td> Biblioteka </td>
+          <td> Data wypożyczenia </td>
+          <td> Data zwrotu </td>
+        </tr>
+      </thead>
+      <?PHP
       while (($row = oci_fetch_array($stmt, OCI_BOTH))) {
         ?>
         <tr>
