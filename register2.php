@@ -41,7 +41,7 @@
       $NAME = $_POST['NAME'];
       $BIRTH = $_POST['BIRTHDATE'];
 
-      $stmt = oci_parse($conn, "SELECT MAX(MID) AS MAX_ID FROM member GROUP BY mid");
+      $stmt = oci_parse($conn, "SELECT MAX(MID) AS MAX_ID FROM member");
       // Wykonywanie wyrazenia SQL-owego
       oci_execute($stmt, OCI_NO_AUTO_COMMIT);
       $row = oci_fetch_array($stmt, OCI_BOTH);
