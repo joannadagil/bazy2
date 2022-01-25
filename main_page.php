@@ -69,7 +69,7 @@
       </form>
 
       <form ACTION="login_library.html" METHOD="POST">
-        <input TYPE="SUBMIT" VALUE="Logowanie">
+        <input TYPE="SUBMIT" VALUE="Logowanie i rejestracja">
       </form>
 
     </div>

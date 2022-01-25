@@ -40,14 +40,14 @@
         $e = oci_error();
         echo $e['message'];
       }
-      $stmt = oci_parse($conn,"SELECT BI.BIID AS ID, B.BTITLE AS TITL, D.DNAME AS NAM, D.DADDRESS AS ADRS FROM BOOK B, BOOKINSTANCE BI, DEPARTMENT D , BORROWING BR WHERE BI.BOOK = B.BID AND BI.DEPARTMENT = D.DID AND BR.IDBOOK = BI.BIID AND BR.RETURN IS NULL AND BR.IDLENDER = ".$_SESSION['USER']."ORDER BY BI.BIID FETCH FIRST 100 ROWS ONLY");
+      $stmt = oci_parse($conn,"SELECT BI.BIID AS ID, B.BTITLE AS TITL, D.DNAME AS NAM, D.DADDRESS AS ADRS, BR.BORROW AS BOR, BR.RETURN AS RET FROM BOOK B, BOOKINSTANCE BI, DEPARTMENT D , BORROWING BR WHERE BI.BOOK = B.BID AND BI.DEPARTMENT = D.DID AND BR.IDBOOK = BI.BIID AND BR.RETURN IS NOT NULL AND BR.IDLENDER = ".$_SESSION['USER']."ORDER BY BI.BIID FETCH FIRST 100 ROWS ONLY");
       oci_execute($stmt, OCI_NO_AUTO_COMMIT);
     ?>
 
     <div class="topnav">
       <a href="main_page.php">Strona główna</a>
-      <a class="active" href="zwrot.php">Aktywne książki</a>
-      <a href="historia_wypozyczen.php">Historia wypożyczeń</a>
+      <a href="zwrot.php">Aktywne książki</a>
+      <a class="active" href="histria_wypozyczen.php">Historia wypożyczeń</a>
     </div>
 
     <table> <?PHP
@@ -58,12 +58,8 @@
       		<td><?php echo $row["TITL"]; ?></td>
           <td><?php echo $row["NAM"]; ?></td>
           <td><?php echo $row["ADRS"]; ?></td>
-          <td>
-            <form ACTION="add_return_date.php" METHOD="POST">
-              <input TYPE="HIDDEN" NAME="to_return" VALUE="<?php echo $row["ID"];?>">
-              <input TYPE="SUBMIT" VALUE="Zwróć">
-            </form>
-          </td>
+          <td><?php echo $row["BOR"]; ?></td>
+          <td><?php echo $row["RET"]; ?></td>
 	      </tr>
       <?php
       }
