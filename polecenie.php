@@ -58,7 +58,7 @@
     <H2> Rekomendacja specjalnie dla ciebie,</H2>
     <H2> wyselekcjonowana przez AI o niezwykłej złożoności, wykwintnym guście i prawdziwie ludzkiej świadomości </H2>
 
-    <div class="header">
+    <div class="header2">
       <h1>magia tu się ziści <?php echo $TITLE ?></h1>
     </div>
 
