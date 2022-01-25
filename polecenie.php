@@ -58,7 +58,7 @@
     <H2> Rekomendacja specjalnie dla ciebie,</H2>
     <H2> wyselekcjonowana przez AI o niezwykłej złożoności, wykwintnym guście i prawdziwie ludzkiej świadomości </H2>
 
-    <H1> <?php echo $TITLE ?> </H1>
+    <H1> magia tu się ziści <?php echo $TITLE ?> </H1>
 
     <div class="container">
       <FORM ACTION="polecenie.php" METHOD="POST">    
