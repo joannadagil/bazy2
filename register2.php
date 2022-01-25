@@ -45,7 +45,7 @@
       // Wykonywanie wyrazenia SQL-owego
       oci_execute($stmt, OCI_NO_AUTO_COMMIT);
       $row = oci_fetch_array($stmt, OCI_BOTH);
-      $ID = $row[MAX_ID];
+      $ID = $row[MAX_ID] + 1;
       $napis = "INSERT INTO MEMBER VALUES (".$ID.",'".$NAME."',DATE '".$BIRTH."')";
       $stmt2 = oci_parse($conn, $napis);
       // Wykonywanie wyrazenia SQL-owego
