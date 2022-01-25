@@ -26,8 +26,8 @@
         padding: 16px; /* some padding */
         text-align: center; /* center the text */
         background: #e9e9e9; /* green background */
-        color: white; /* white text color */
-        width: 45%;
+        color: black; /* white text color */
+        width: 48%;
         margin: auto;
       }
 
