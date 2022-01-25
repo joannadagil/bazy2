@@ -48,6 +48,7 @@
       <a href="main_page.php">Strona główna</a>
       <a class="active" href="zwrot.php">Aktywne książki</a>
       <a href="historia_wypozyczen.php">Historia wypożyczeń</a>
+      <a href="historia_ocen.php">Historia ocen</a>
     </div>
 
     <table> <?PHP

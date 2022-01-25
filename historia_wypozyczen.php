@@ -47,7 +47,8 @@
     <div class="topnav">
       <a href="main_page.php">Strona główna</a>
       <a href="zwrot.php">Aktywne książki</a>
-      <a class="active" href="histria_wypozyczen.php">Historia wypożyczeń</a>
+      <a class="active" href="historia_wypozyczen.php">Historia wypożyczeń</a>
+      <a href="historia_ocen.php">Historia ocen</a>
     </div>
 
     <table> 
