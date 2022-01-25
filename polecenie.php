@@ -28,6 +28,7 @@
         background: #1abc9c; /* green background */
         color: white; /* white text color */
         width: 40%;
+        float: center;
       }
 
         /* Increase the font size of the <h1> element */
