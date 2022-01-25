@@ -39,6 +39,7 @@
       <a href="main_page.php">Strona główna</a>
       <a href="rankingi.php">Ilość książek</a>
       <a class="active" href="ranking_oceny_ksiazki.php">Oceny książek</a>
+      <a href="ranking_popularnosci.php">Popularność książek</a>
     </div>
 
     <h2> Ranking książek wg. ocen </h2>

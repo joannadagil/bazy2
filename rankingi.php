@@ -39,6 +39,7 @@
       <a href="main_page.php">Strona główna</a>
       <a class="active" href="rankingi.php">Ilość książek</a>
       <a href="ranking_oceny_ksiazki.php">Oceny książek</a>
+      <a href="ranking_popularnosci.php">Popularność książek</a>
     </div>
 
     <h2> Ranking autorów względem ilości książek posiadanych przez bibliotekę </h2>
