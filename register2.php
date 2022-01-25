@@ -40,6 +40,17 @@
       }
       $NAME = $_POST['NAME'];
       $BIRTH = $_POST['BIRTHDATE'];
+
+      $stmt = oci_parse($conn, "SELECT MAX(MID) AS MAX_ID FROM member GROUP BY mid");
+      // Wykonywanie wyrazenia SQL-owego
+      oci_execute($stmt, OCI_NO_AUTO_COMMIT);
+      $row = oci_fetch_array($stmt, OCI_BOTH);
+      $ID = $row[MAX_ID];
+
+      $stmt2 = oci_parse($conn, "INSERT INTO MEMBER VALUES (".$ID.",'".$NAME."',DATE '".$BIRTH."');");
+      // Wykonywanie wyrazenia SQL-owego
+      oci_execute($stmt2, OCI_NO_AUTO_COMMIT);
+      oci_commit($conn);
     ?>
 
     <div class="header">
@@ -54,6 +65,17 @@
 
 
     <H2> Witaj, <?php $NAME ?></H2>
+
+    <H2> Twój numer użytkownika to <?php $ID ?> </H2>
+
+
+
+    <div class="container">
+      <FORM ACTION="register2.php" METHOD="POST">
+        <input type="hidden" name="USER" value="<?php $ID ?>">    
+        <INPUT TYPE="SUBMIT" VALUE="Kontynuuj">
+      </FORM>
+    </div>
 
     <div class="footer">
       <p style="text-align:left;">

@@ -52,9 +52,9 @@
 
 
     <div class="container">
-      <FORM ACTION="register.php" METHOD="POST">
+      <FORM ACTION="register2.php" METHOD="POST">
         <input type="text" placeholder="Wprowadź swoje imię i nazwisko" name="NAME" value="">    
-        <input type="text" placeholder="Wprowadź swoją datę urodzenia" name="BIRTHDATE" value="">
+        <input type="text" placeholder="Wprowadź swoją datę urodzenia (YYYY-MM-DD)" name="BIRTHDATE" value="">
         <INPUT TYPE="SUBMIT" VALUE="Stwórz konto">
       </FORM>
     </div>
