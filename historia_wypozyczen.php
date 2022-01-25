@@ -57,7 +57,6 @@
           <td><?php echo $row["ID"]; ?></td>
       		<td><?php echo $row["TITL"]; ?></td>
           <td><?php echo $row["NAM"]; ?></td>
-          <td><?php echo $row["ADRS"]; ?></td>
           <td><?php echo $row["BOR"]; ?></td>
           <td><?php echo $row["RET"]; ?></td>
 	      </tr>
