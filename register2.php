@@ -55,7 +55,6 @@
 
     <div class="header">
       <h1>Rejestracja</h1>
-      <p> <?php echo $napis ?> </p>
     </div>
 
     <div class="topnav">
@@ -67,7 +66,7 @@
 
     <H2> Witaj, <?php echo $NAME ?></H2>
 
-    <H2> Twój numer użytkownika to <?php echo $ID ?> </H2>
+    <H3> Twój numer użytkownika to <?php echo $ID ?> </H3>
 
 
 
