@@ -40,6 +40,9 @@
         $e = oci_error();
         echo $e['message'];
       }
+      $genre = 
+
+
       $stmt = oci_parse($conn,"SELECT BI.BIID AS ID, B.BTITLE AS TITL, D.DNAME AS NAM, D.DADDRESS AS ADRS, BR.BORROW AS BOR, BR.RETURN AS RET FROM BOOK B, BOOKINSTANCE BI, DEPARTMENT D , BORROWING BR WHERE BI.BOOK = B.BID AND BI.DEPARTMENT = D.DID AND BR.IDBOOK = BI.BIID AND BR.RETURN IS NOT NULL AND BR.IDLENDER = ".$_SESSION['USER']."ORDER BY BR.RETURN DESC FETCH FIRST 100 ROWS ONLY");
       oci_execute($stmt, OCI_NO_AUTO_COMMIT);
     ?>
@@ -52,32 +55,16 @@
       <a class="active" href="polecenie.php">Moja rekomendacja</a>
     </div>
     
+    <H2> Rekomendacja specjalnie dla ciebie,</H2>
+    <H2> wyselekcjonowana przez AI o niezwykłej złożoności, wykwintnym guście i prawdziwie ludzkiej świadomości </H2>
+
+    <H1> <?php echo $TITLE ?> </H1>
+
     <div class="container">
-      <FORM ACTION="main_page.php" METHOD="POST">
-        <input type="text" placeholder="Wprowadź ID czytelnika" name="USER" value="">    
-        <INPUT TYPE="SUBMIT" VALUE="Zaloguj">
-      </FORM>
       <FORM ACTION="polecenie.php" METHOD="POST">    
         <INPUT TYPE="SUBMIT" VALUE="Nowa rekomendacja">
       </FORM>
     </div>
 
-
-
-    <table> 
-      <?PHP
-      while (($row = oci_fetch_array($stmt, OCI_BOTH))) {
-        ?>
-        <tr>
-          <td><?php echo $row["ID"]; ?></td>
-      		<td><?php echo $row["TITL"]; ?></td>
-          <td><?php echo $row["NAM"]; ?></td>
-          <td><?php echo $row["BOR"]; ?></td>
-          <td><?php echo $row["RET"]; ?></td>
-	      </tr>
-      <?php
-      }
-    ?>
-    </table>
   </BODY>
 </HTML>
