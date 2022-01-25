@@ -66,7 +66,7 @@
 
     <H2> Witaj, <?php echo $NAME ?></H2>
 
-    <H3> Twój numer użytkownika to <?php echo $ID ?> </H3>
+    <H2> Twój numer użytkownika to <?php echo $ID ?> </H2>
 
 
 
