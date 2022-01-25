@@ -49,6 +49,7 @@
       <a class="active" href="zwrot.php">Aktywne książki</a>
       <a href="historia_wypozyczen.php">Historia wypożyczeń</a>
       <a href="historia_ocen.php">Historia ocen</a>
+      <a href="polecenie.php">Moja rekomendacja</a>
     </div>
 
     <table> <?PHP

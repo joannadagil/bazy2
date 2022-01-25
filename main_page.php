@@ -65,7 +65,7 @@
       </form>
 
       <form ACTION="zwrot.php" METHOD="POST">
-        <input TYPE="SUBMIT" VALUE="Moje książki">
+        <input TYPE="SUBMIT" VALUE="Moje konto">
       </form>
 
       <form ACTION="login_library.html" METHOD="POST">
