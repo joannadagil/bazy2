@@ -65,7 +65,7 @@
         <tr>
       	  <td><?php echo $row["TITL"]; ?></td>
           <td><?php echo $row["OCENA"]; ?></td>
-          <td><?php echo $row["RDATE"]; ?></td>
+          <td><?php echo $row["RDATA"]; ?></td>
 	      </tr>
       <?php
       }
