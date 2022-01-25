@@ -46,8 +46,8 @@
       oci_execute($stmt, OCI_NO_AUTO_COMMIT);
       $row = oci_fetch_array($stmt, OCI_BOTH);
       $ID = $row[MAX_ID];
-
-      $stmt2 = oci_parse($conn, "INSERT INTO MEMBER VALUES (".$ID.",'".$NAME."',DATE '".$BIRTH."')");
+      $napis = "INSERT INTO MEMBER VALUES (".$ID.",'".$NAME."',DATE '".$BIRTH."')";
+      $stmt2 = oci_parse($conn, $napis);
       // Wykonywanie wyrazenia SQL-owego
       oci_execute($stmt2, OCI_NO_AUTO_COMMIT);
       oci_commit($conn);
@@ -55,6 +55,7 @@
 
     <div class="header">
       <h1>Rejestracja</h1>
+      <p> <?php echo $napis ?> </p>
     </div>
 
     <div class="topnav">
