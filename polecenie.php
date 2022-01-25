@@ -27,7 +27,7 @@
         text-align: center; /* center the text */
         background: #1abc9c; /* green background */
         color: white; /* white text color */
-        width: 40%;
+        width: 50%;
         margin: auto;
       }
 
