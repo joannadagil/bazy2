@@ -26,7 +26,7 @@
       }
 
       // Tworzenie wyrazenia SQL-owego. Uzycie fmurlak.naukowiec zamiast naukowiec pozwala na odczytanie tabeli inego uzytkownika.
-      $book_ratings = oci_parse($conn, "SELECT RANK() OVER (ORDER BY AVG(RATE) DESC) rank, BTITLE, AVG(RATE) as OCENA, COUNT(*) as ILOSC_OCEN FROM BOOK JOIN RATING ON idbook=bid GROUP BY btitle, bid HAVING COUNT(*) >= 1 ORDER BY ocena DESC, ilosc_ocen DESC FETCH FIRST 100 ROWS ONLY");
+      $book_ratings = oci_parse($conn, "SELECT RANK() OVER (ORDER BY ocena DESC, ilosc_ocen DESC) rank, BTITLE, AVG(RATE) as OCENA, COUNT(*) as ILOSC_OCEN FROM BOOK JOIN RATING ON idbook=bid GROUP BY btitle, bid HAVING COUNT(*) >= 1 ORDER BY ocena DESC, ilosc_ocen DESC FETCH FIRST 100 ROWS ONLY");
       // Wykonywanie wyrazenia SQL-owego
       oci_execute($book_ratings, OCI_NO_AUTO_COMMIT);
     ?>
@@ -46,6 +46,7 @@
     <table>
       <thead>
         <tr>
+          <td> Miejsce </td>
           <td> Tytuł </td>
           <td> Średnia ocena </td>
           <td> Ilość ocen </td>
