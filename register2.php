@@ -71,7 +71,7 @@
 
 
     <div class="container">
-      <FORM ACTION="register2.php" METHOD="POST">
+      <FORM ACTION="main_page.php" METHOD="POST">
         <input type="hidden" name="USER" value="<?php $ID ?>">    
         <INPUT TYPE="SUBMIT" VALUE="Kontynuuj">
       </FORM>
