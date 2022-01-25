@@ -23,12 +23,12 @@
         padding: 0px 15px;
       }
       .header2 {
-        padding: 80px; /* some padding */
+        padding: 40px; /* some padding */
         text-align: center; /* center the text */
         background: #1abc9c; /* green background */
         color: white; /* white text color */
         width: 40%;
-        float: center;
+        margin: auto;
       }
 
         /* Increase the font size of the <h1> element */
