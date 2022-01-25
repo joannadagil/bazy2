@@ -64,9 +64,9 @@
     </div>
 
 
-    <H2> Witaj, <?php $NAME ?></H2>
+    <H2> Witaj, <?php echo $NAME ?></H2>
 
-    <H2> Twój numer użytkownika to <?php $ID ?> </H2>
+    <H2> Twój numer użytkownika to <?php echo $ID ?> </H2>
 
 
 
