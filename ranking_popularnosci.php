@@ -66,10 +66,11 @@
         $e = oci_error();
         echo $e['message'];
       }
+      $genre = $_GET['genre'];
       //Gatunek do wyboru
       $book_genre = oci_parse($conn, "SELECT DISTINCT BGENRE FROM BOOK");
       // Tworzenie wyrazenia SQL-owego. Uzycie fmurlak.naukowiec zamiast naukowiec pozwala na odczytanie tabeli inego uzytkownika.
-      $book_ratings = oci_parse($conn, "SELECT RANK() OVER (ORDER BY COUNT(*) DESC) RANKING, BTITLE, COUNT(*) as IL_WYPO FROM BOOKINSTANCE JOIN BORROWING ON biid=idbook JOIN BOOK ON book=bid GROUP BY btitle, bid ORDER BY IL_WYPO DESC FETCH FIRST 100 ROWS ONLY");
+      $book_ratings = oci_parse($conn, "SELECT RANK() OVER (ORDER BY COUNT(*) DESC) RANKING, BTITLE, COUNT(*) as IL_WYPO FROM BOOKINSTANCE JOIN BORROWING ON biid=idbook JOIN BOOK ON book=bid WHERE BGENRE LIKE '%".$genre."%' GROUP BY btitle, bid ORDER BY IL_WYPO DESC FETCH FIRST 100 ROWS ONLY");
       // Wykonywanie wyrazenia SQL-owego
       oci_execute($book_genre, OCI_NO_AUTO_COMMIT);
       oci_execute($book_ratings, OCI_NO_AUTO_COMMIT);
