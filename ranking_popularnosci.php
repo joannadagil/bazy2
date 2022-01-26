@@ -42,13 +42,6 @@
       <a href="rankingi.php">Ilość książek</a>
       <a href="ranking_oceny_ksiazki.php">Oceny książek</a>
       <a class="active" href="ranking_popularnosci.php">Popularność książek</a>
-
-      <?php
-        while($row = oci_fetch_array($book_ratings, OCI_BOTH))
-        {
-            $options = $options."<option>$row[1]</option>";
-        }
-      ?>
     </div>
 
     <h2> Ranking książek wg. ocen </h2>
