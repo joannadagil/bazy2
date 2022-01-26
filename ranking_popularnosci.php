@@ -42,6 +42,13 @@
       <a href="rankingi.php">Ilość książek</a>
       <a href="ranking_oceny_ksiazki.php">Oceny książek</a>
       <a class="active" href="ranking_popularnosci.php">Popularność książek</a>
+
+      <select name="cars" id="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </select>
     </div>
 
     <h2> Ranking książek wg. ocen </h2>
