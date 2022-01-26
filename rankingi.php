@@ -24,10 +24,13 @@
         $e = oci_error();
         echo $e['message'];
       }
-
+      $genre = $_GET['genre'];
+      //Gatunek do wyboru
+      $book_genre = oci_parse($conn, "SELECT DISTINCT BGENRE FROM BOOK");
       // Tworzenie wyrazenia SQL-owego. Uzycie fmurlak.naukowiec zamiast naukowiec pozwala na odczytanie tabeli inego uzytkownika.
-      $author_book_amount = oci_parse($conn, "WITH a AS (SELECT RANK() OVER (ORDER BY COUNT(*) DESC) rank, aname, COUNT(*) AS amount FROM author JOIN authorship ON aid = idauthor GROUP BY aname, aid ORDER BY amount DESC FETCH FIRST 100 ROWS ONLY) SELECT ROWNUM, a.* FROM a");
+      $author_book_amount = oci_parse($conn, "WITH a AS (SELECT RANK() OVER (ORDER BY COUNT(*) DESC) rank, aname, COUNT(*) AS amount FROM author JOIN authorship ON aid = idauthor WHERE BGENRE LIKE '%".$genre."%' GROUP BY aname, aid ORDER BY amount DESC FETCH FIRST 100 ROWS ONLY) SELECT ROWNUM, a.* FROM a");
       // Wykonywanie wyrazenia SQL-owego
+      oci_execute($book_genre, OCI_NO_AUTO_COMMIT);
       oci_execute($author_book_amount, OCI_NO_AUTO_COMMIT);
     ?>
 
@@ -40,6 +43,20 @@
       <a class="active" href="rankingi.php">Ilość książek</a>
       <a href="ranking_oceny_ksiazki.php">Oceny książek</a>
       <a href="ranking_popularnosci.php">Popularność książek</a>
+      <div class="dropdown">
+        <button class="dropbtn">Gatunek <?php echo " ".$genre; ?>
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+        <?PHP
+        while (($rowg = oci_fetch_array($book_genre, OCI_BOTH))) {
+          ?>
+            <a href=<?php echo "?genre=".$rowg["BGENRE"]; ?>><?php echo $rowg["BGENRE"]; ?></a>
+        <?php
+        }
+        ?>
+        </div>
+      </div>
     </div>
 
     <h2> Ranking autorów względem ilości książek posiadanych przez bibliotekę </h2>
