@@ -33,9 +33,9 @@
       if ($time == 'Wszechczasów') {
         $book_ratings = oci_parse($conn, "SELECT RANK() OVER (ORDER BY COUNT(*) DESC) RANKING, BTITLE, COUNT(*) as IL_WYPO FROM BOOKINSTANCE JOIN BORROWING ON biid=idbook JOIN BOOK ON book=bid WHERE BGENRE LIKE '%".$genre."%' GROUP BY btitle, bid ORDER BY IL_WYPO DESC FETCH FIRST 100 ROWS ONLY");
       } elseif ($time == 'Roku') {
-        $book_ratings = oci_parse($conn, "SELECT RANK() OVER (ORDER BY COUNT(*) DESC) RANKING, BTITLE, COUNT(*) as IL_WYPO FROM BOOKINSTANCE JOIN BORROWING ON biid=idbook JOIN BOOK ON book=bid WHERE BGENRE LIKE '%".$genre."%' GROUP BY btitle, bid ORDER BY IL_WYPO DESC FETCH FIRST 100 ROWS ONLY");
+        $book_ratings = oci_parse($conn, "SELECT RANK() OVER (ORDER BY COUNT(*) DESC) RANKING, BTITLE, COUNT(*) as IL_WYPO FROM BOOKINSTANCE JOIN BORROWING ON biid=idbook JOIN BOOK ON book=bid WHERE BORROW - CURRENT_DATE < 366 AND BGENRE LIKE '%".$genre."%' GROUP BY btitle, bid ORDER BY IL_WYPO DESC FETCH FIRST 100 ROWS ONLY");
       } elseif ($time == 'Miesiąca') {
-        $book_ratings = oci_parse($conn, "SELECT RANK() OVER (ORDER BY COUNT(*) DESC) RANKING, BTITLE, COUNT(*) as IL_WYPO FROM BOOKINSTANCE JOIN BORROWING ON biid=idbook JOIN BOOK ON book=bid WHERE BGENRE LIKE '%".$genre."%' GROUP BY btitle, bid ORDER BY IL_WYPO DESC FETCH FIRST 100 ROWS ONLY");
+        $book_ratings = oci_parse($conn, "SELECT RANK() OVER (ORDER BY COUNT(*) DESC) RANKING, BTITLE, COUNT(*) as IL_WYPO FROM BOOKINSTANCE JOIN BORROWING ON biid=idbook JOIN BOOK ON book=bid WHERE BORROW - CURRENT_DATE < 31 AND BGENRE LIKE '%".$genre."%' GROUP BY btitle, bid ORDER BY IL_WYPO DESC FETCH FIRST 100 ROWS ONLY");
       }
       // Wykonywanie wyrazenia SQL-owego
       oci_execute($book_genre, OCI_NO_AUTO_COMMIT);
