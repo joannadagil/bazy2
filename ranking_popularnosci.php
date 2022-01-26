@@ -89,9 +89,13 @@
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
+        <?PHP
+        while (($rowg = oci_fetch_array($book_genre, OCI_BOTH))) {
+          ?>
+            <a href="#"><?php echo $rowg["BGENRE"]; ?></a>
+        <?php
+        }
+        ?>
         </div>
       </div>
     </div>
