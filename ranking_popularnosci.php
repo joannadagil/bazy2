@@ -86,7 +86,7 @@
       <a href="ranking_oceny_ksiazki.php">Oceny książek</a>
       <a class="active" href="ranking_popularnosci.php">Popularność książek</a>
       <div class="dropdown">
-        <button class="dropbtn">Dropdown
+        <button class="dropbtn">Gatunek <?php echo " ".$genre; ?>
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
