@@ -23,11 +23,20 @@
         $e = oci_error();
         echo $e['message'];
       }
+      if (!isset($_GET['time'])) {
+        $time = 'ever';
+      } else {
+        $time = $_GET['time'];
+      }
       $genre = $_GET['genre'];
-      //Gatunek do wyboru
       $book_genre = oci_parse($conn, "SELECT DISTINCT BGENRE FROM BOOK");
-      // Tworzenie wyrazenia SQL-owego. Uzycie fmurlak.naukowiec zamiast naukowiec pozwala na odczytanie tabeli inego uzytkownika.
-      $book_ratings = oci_parse($conn, "SELECT RANK() OVER (ORDER BY COUNT(*) DESC) RANKING, BTITLE, COUNT(*) as IL_WYPO FROM BOOKINSTANCE JOIN BORROWING ON biid=idbook JOIN BOOK ON book=bid WHERE BGENRE LIKE '%".$genre."%' GROUP BY btitle, bid ORDER BY IL_WYPO DESC FETCH FIRST 100 ROWS ONLY");
+      if ($time == 'ever') {
+        $book_ratings = oci_parse($conn, "SELECT RANK() OVER (ORDER BY COUNT(*) DESC) RANKING, BTITLE, COUNT(*) as IL_WYPO FROM BOOKINSTANCE JOIN BORROWING ON biid=idbook JOIN BOOK ON book=bid WHERE BGENRE LIKE '%".$genre."%' GROUP BY btitle, bid ORDER BY IL_WYPO DESC FETCH FIRST 100 ROWS ONLY");
+      } elseif ($time == 'year') {
+        $book_ratings = oci_parse($conn, "SELECT RANK() OVER (ORDER BY COUNT(*) DESC) RANKING, BTITLE, COUNT(*) as IL_WYPO FROM BOOKINSTANCE JOIN BORROWING ON biid=idbook JOIN BOOK ON book=bid WHERE BGENRE LIKE '%".$genre."%' GROUP BY btitle, bid ORDER BY IL_WYPO DESC FETCH FIRST 100 ROWS ONLY");
+      } elseif ($time == 'month') {
+        $book_ratings = oci_parse($conn, "SELECT RANK() OVER (ORDER BY COUNT(*) DESC) RANKING, BTITLE, COUNT(*) as IL_WYPO FROM BOOKINSTANCE JOIN BORROWING ON biid=idbook JOIN BOOK ON book=bid WHERE BGENRE LIKE '%".$genre."%' GROUP BY btitle, bid ORDER BY IL_WYPO DESC FETCH FIRST 100 ROWS ONLY");
+      }
       // Wykonywanie wyrazenia SQL-owego
       oci_execute($book_genre, OCI_NO_AUTO_COMMIT);
       oci_execute($book_ratings, OCI_NO_AUTO_COMMIT);
@@ -43,6 +52,16 @@
       <a href="ranking_oceny_ksiazki.php">Oceny książek</a>
       <a class="active" href="ranking_popularnosci.php">Popularność książek</a>
       <a href="ranking_uzytkownikow.php">Aktywność użytkowników</a>
+      <div class="dropdown">
+        <button class="dropbtn"><?php echo $time; ?>
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="?time=month">Miesiąca</a>
+            <a href="?time=year">Roku</a>
+            <a href="?time=ever">Wszechczasów</a>
+        </div>
+      </div>
       <div class="dropdown">
         <button class="dropbtn">Gatunek <?php echo " ".$genre; ?>
           <i class="fa fa-caret-down"></i>
