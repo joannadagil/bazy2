@@ -15,7 +15,6 @@
     </style>
   </HEAD>
   <BODY>
-
     <?PHP
       session_start();
       $conn = oci_connect($_SESSION['LOGIN'],$_SESSION['PASS'],"//labora.mimuw.edu.pl/LABS");
@@ -24,10 +23,13 @@
         $e = oci_error();
         echo $e['message'];
       }
-
+      $genre = $_GET['genre'];
+      //Gatunek do wyboru
+      $book_genre = oci_parse($conn, "SELECT DISTINCT BGENRE FROM BOOK");
       // Tworzenie wyrazenia SQL-owego. Uzycie fmurlak.naukowiec zamiast naukowiec pozwala na odczytanie tabeli inego uzytkownika.
-      $book_ratings = oci_parse($conn, "SELECT RANK() OVER (ORDER BY AVG(RATE) DESC, COUNT(*) DESC) rank, BTITLE, AVG(RATE) as OCENA, COUNT(*) as ILOSC_OCEN FROM BOOK JOIN RATING ON idbook=bid GROUP BY btitle, bid HAVING COUNT(*) >= 1 ORDER BY ocena DESC, ilosc_ocen DESC FETCH FIRST 100 ROWS ONLY");
+      $book_ratings = oci_parse($conn, "SELECT RANK() OVER (ORDER BY AVG(RATE) DESC, COUNT(*) DESC) rank, BTITLE, AVG(RATE) as OCENA, COUNT(*) as ILOSC_OCEN FROM BOOK JOIN RATING ON idbook=bid WHERE BGENRE LIKE '%".$genre."%' GROUP BY btitle, bid HAVING COUNT(*) >= 1 ORDER BY ocena DESC, ilosc_ocen DESC FETCH FIRST 100 ROWS ONLY");
       // Wykonywanie wyrazenia SQL-owego
+      oci_execute($book_genre, OCI_NO_AUTO_COMMIT);
       oci_execute($book_ratings, OCI_NO_AUTO_COMMIT);
     ?>
 
@@ -40,6 +42,20 @@
       <a href="rankingi.php">Ilość książek</a>
       <a class="active" href="ranking_oceny_ksiazki.php">Oceny książek</a>
       <a href="ranking_popularnosci.php">Popularność książek</a>
+      <div class="dropdown">
+        <button class="dropbtn">Gatunek <?php echo " ".$genre; ?>
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+        <?PHP
+        while (($rowg = oci_fetch_array($book_genre, OCI_BOTH))) {
+          ?>
+            <a href=<?php echo "?genre=".$rowg["BGENRE"]; ?>><?php echo $rowg["BGENRE"]; ?></a>
+        <?php
+        }
+        ?>
+        </div>
+      </div>
     </div>
 
     <h2> Ranking książek wg. ocen </h2>

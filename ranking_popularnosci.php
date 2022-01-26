@@ -15,7 +15,6 @@
     </style>
   </HEAD>
   <BODY>
-
     <?PHP
       session_start();
       $conn = oci_connect($_SESSION['LOGIN'],$_SESSION['PASS'],"//labora.mimuw.edu.pl/LABS");
