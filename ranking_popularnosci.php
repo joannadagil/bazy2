@@ -16,6 +16,7 @@
 
       .dropdown {
         float: right;
+        margin: 5%;
         overflow: hidden;
       }
 
