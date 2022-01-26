@@ -43,6 +43,7 @@
       <a class="active" href="rankingi.php">Ilość książek</a>
       <a href="ranking_oceny_ksiazki.php">Oceny książek</a>
       <a href="ranking_popularnosci.php">Popularność książek</a>
+      <a href="ranking_uzytkownikow.php">Aktywność użytkowników</a>
       <div class="dropdown">
         <button class="dropbtn">Gatunek <?php echo " ".$genre; ?>
           <i class="fa fa-caret-down"></i>

@@ -23,13 +23,9 @@
         $e = oci_error();
         echo $e['message'];
       }
-      $genre = $_GET['genre'];
-      //Gatunek do wyboru
-      $book_genre = oci_parse($conn, "SELECT DISTINCT BGENRE FROM BOOK");
       // Tworzenie wyrazenia SQL-owego. Uzycie fmurlak.naukowiec zamiast naukowiec pozwala na odczytanie tabeli inego uzytkownika.
-      $book_ratings = oci_parse($conn, "SELECT RANK() OVER (ORDER BY COUNT(*) DESC) RANKING, BTITLE, COUNT(*) as IL_WYPO FROM BOOKINSTANCE JOIN BORROWING ON biid=idbook JOIN BOOK ON book=bid WHERE BGENRE LIKE '%".$genre."%' GROUP BY btitle, bid ORDER BY IL_WYPO DESC FETCH FIRST 100 ROWS ONLY");
+      $book_ratings = oci_parse($conn, "SELECT RANK() OVER (ORDER BY COUNT(*) DESC) RANKING, MNAME, COUNT(*) as ile FROM MEMBER JOIN RATING ON mid = idlender GROUP BY mid ORDER BY ile DESC FETCH FIRST 100 ROWS ONLY");
       // Wykonywanie wyrazenia SQL-owego
-      oci_execute($book_genre, OCI_NO_AUTO_COMMIT);
       oci_execute($book_ratings, OCI_NO_AUTO_COMMIT);
     ?>
 
@@ -41,32 +37,18 @@
       <a href="main_page.php">Strona główna</a>
       <a href="rankingi.php">Ilość książek</a>
       <a href="ranking_oceny_ksiazki.php">Oceny książek</a>
-      <a class="active" href="ranking_popularnosci.php">Popularność książek</a>
-      <a href="ranking_uzytkownikow.php">Aktywność użytkowników</a>
-      <div class="dropdown">
-        <button class="dropbtn">Gatunek <?php echo " ".$genre; ?>
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-        <?PHP
-        while (($rowg = oci_fetch_array($book_genre, OCI_BOTH))) {
-          ?>
-            <a href=<?php echo "?genre=".$rowg["BGENRE"]; ?>><?php echo $rowg["BGENRE"]; ?></a>
-        <?php
-        }
-        ?>
-        </div>
-      </div>
+      <a href="ranking_popularnosci.php">Popularność książek</a>
+      <a class="active" href="ranking_uzytkownikow.php">Aktywność użytkowników</a>
     </div>
 
-    <h2> Ranking książek wg. ocen </h2>
+    <h2> Ranking aktywności użytkowników </h2>
 
     <table>
       <thead>
         <tr>
           <td> Miejsce </td>
-          <td> Tytuł </td>
-          <td> Ilość wypożyczeń </td>
+          <td> Imię i nazwisko </td>
+          <td> Ilość ocen </td>
         </tr>
       </thead>
       <?PHP
@@ -74,8 +56,8 @@
         ?>
         <tr>
           <td><?php echo $row["RANKING"]; ?></td>
-          <td><?php echo $row["BTITLE"]; ?></td>
-          <td text-align="center"><?php echo $row["IL_WYPO"]; ?></td>
+          <td><?php echo $row["MNAME"]; ?></td>
+          <td text-align="center"><?php echo $row["ILE"]; ?></td>
 	    </tr>
       <?php
       }
