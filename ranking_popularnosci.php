@@ -24,12 +24,27 @@
         $e = oci_error();
         echo $e['message'];
       }
-
+      //Gatunek do wyboru
+      $book_genre = oci_parse($conn, "SELECT DISTINCT BGENRE FROM BOOK");
       // Tworzenie wyrazenia SQL-owego. Uzycie fmurlak.naukowiec zamiast naukowiec pozwala na odczytanie tabeli inego uzytkownika.
       $book_ratings = oci_parse($conn, "SELECT RANK() OVER (ORDER BY COUNT(*) DESC) RANKING, BTITLE, COUNT(*) as IL_WYPO FROM BOOKINSTANCE JOIN BORROWING ON biid=idbook JOIN BOOK ON book=bid GROUP BY btitle, bid ORDER BY IL_WYPO DESC FETCH FIRST 100 ROWS ONLY");
       // Wykonywanie wyrazenia SQL-owego
+      oci_execute($book_genre, OCI_NO_AUTO_COMMIT);
       oci_execute($book_ratings, OCI_NO_AUTO_COMMIT);
     ?>
+
+    <?php
+      while($row = oci_fetch_array($book_ratings, OCI_BOTH))
+      {
+          $options = $options."<option>$row[1]</option>";
+      }
+    ?>
+        <!--Method One-->
+        <select>
+            <?php while($row1 = mysqli_fetch_array($result1)):;?>
+            <option value="<?php echo $row1[0];?>"><?php echo $row1[1];?></option>
+            <?php endwhile;?>
+        </select>
 
     <div class="header">
       <h1>Rankingi biblioteczne</h1>
