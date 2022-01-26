@@ -24,17 +24,17 @@
         echo $e['message'];
       }
       if (!isset($_GET['time'])) {
-        $time = 'ever';
+        $time = 'Wrzechczasów';
       } else {
         $time = $_GET['time'];
       }
       $genre = $_GET['genre'];
       $book_genre = oci_parse($conn, "SELECT DISTINCT BGENRE FROM BOOK");
-      if ($time == 'ever') {
+      if ($time == 'Wrzechczasów') {
         $book_ratings = oci_parse($conn, "SELECT RANK() OVER (ORDER BY COUNT(*) DESC) RANKING, BTITLE, COUNT(*) as IL_WYPO FROM BOOKINSTANCE JOIN BORROWING ON biid=idbook JOIN BOOK ON book=bid WHERE BGENRE LIKE '%".$genre."%' GROUP BY btitle, bid ORDER BY IL_WYPO DESC FETCH FIRST 100 ROWS ONLY");
-      } elseif ($time == 'year') {
+      } elseif ($time == 'Roku') {
         $book_ratings = oci_parse($conn, "SELECT RANK() OVER (ORDER BY COUNT(*) DESC) RANKING, BTITLE, COUNT(*) as IL_WYPO FROM BOOKINSTANCE JOIN BORROWING ON biid=idbook JOIN BOOK ON book=bid WHERE BGENRE LIKE '%".$genre."%' GROUP BY btitle, bid ORDER BY IL_WYPO DESC FETCH FIRST 100 ROWS ONLY");
-      } elseif ($time == 'month') {
+      } elseif ($time == 'Miesiąca') {
         $book_ratings = oci_parse($conn, "SELECT RANK() OVER (ORDER BY COUNT(*) DESC) RANKING, BTITLE, COUNT(*) as IL_WYPO FROM BOOKINSTANCE JOIN BORROWING ON biid=idbook JOIN BOOK ON book=bid WHERE BGENRE LIKE '%".$genre."%' GROUP BY btitle, bid ORDER BY IL_WYPO DESC FETCH FIRST 100 ROWS ONLY");
       }
       // Wykonywanie wyrazenia SQL-owego
@@ -57,9 +57,9 @@
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="?time=month">Miesiąca</a>
-            <a href="?time=year">Roku</a>
-            <a href="?time=ever">Wszechczasów</a>
+            <a href="?time=Miesiąca">Miesiąca</a>
+            <a href="?time=Roku">Roku</a>
+            <a href="?time=Wszechczasów">Wszechczasów</a>
         </div>
       </div>
       <div class="dropdown">
