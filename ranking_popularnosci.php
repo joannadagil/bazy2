@@ -15,7 +15,7 @@
       /* -------------------------- dropdown --------------------------- */
 
       .dropdown {
-        float: left;
+        float: right;
         overflow: hidden;
       }
 
