@@ -33,19 +33,6 @@
       oci_execute($book_ratings, OCI_NO_AUTO_COMMIT);
     ?>
 
-    <?php
-      while($row = oci_fetch_array($book_ratings, OCI_BOTH))
-      {
-          $options = $options."<option>$row[1]</option>";
-      }
-    ?>
-        <!--Method One-->
-        <select>
-            <?php while($row1 = mysqli_fetch_array($result1)):;?>
-            <option value="<?php echo $row1[0];?>"><?php echo $row1[1];?></option>
-            <?php endwhile;?>
-        </select>
-
     <div class="header">
       <h1>Rankingi biblioteczne</h1>
     </div>
@@ -55,6 +42,13 @@
       <a href="rankingi.php">Ilość książek</a>
       <a href="ranking_oceny_ksiazki.php">Oceny książek</a>
       <a class="active" href="ranking_popularnosci.php">Popularność książek</a>
+
+      <?php
+        while($row = oci_fetch_array($book_ratings, OCI_BOTH))
+        {
+            $options = $options."<option>$row[1]</option>";
+        }
+      ?>
     </div>
 
     <h2> Ranking książek wg. ocen </h2>
