@@ -24,7 +24,7 @@
         echo $e['message'];
       }
       // Tworzenie wyrazenia SQL-owego. Uzycie fmurlak.naukowiec zamiast naukowiec pozwala na odczytanie tabeli inego uzytkownika.
-      $member_rating = oci_parse($conn, "SELECT RANK() OVER (ORDER BY COUNT(*) DESC) RANKING, MNAME, COUNT(*) as ile FROM MEMBER JOIN RATING ON mid = idlender GROUP BY mid ORDER BY ile DESC FETCH FIRST 100 ROWS ONLY");
+      $member_rating = oci_parse($conn, "SELECT RANK() OVER (ORDER BY COUNT(*) DESC) RANKING, MNAME, COUNT(*) as ile FROM RATING JOIN MEMBER ON idlender = mid GROUP BY mid ORDER BY ile DESC FETCH FIRST 100 ROWS ONLY");
       // Wykonywanie wyrazenia SQL-owego
       oci_execute($member_rating, OCI_NO_AUTO_COMMIT);
     ?>
