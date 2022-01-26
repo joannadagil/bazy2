@@ -59,7 +59,7 @@
       </div>
     </div>
 
-    <h2> Ranking książek wg. ocen </h2>
+    <h2> Ranking książek wg. wypożyczeń </h2>
 
     <table>
       <thead>
