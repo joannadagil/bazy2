@@ -57,7 +57,7 @@
         ?>
         <tr>
           <td><?php echo $row["RANKING"]; ?></td>
-          <td><?php echo $row["ID"]; ?></td>
+          <td><?php echo $row["MID"]; ?></td>
           <td><?php echo $row["MNAME"]; ?></td>
           <td text-align="center"><?php echo $row["ILE"]; ?></td>
 	       </tr>
