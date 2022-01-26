@@ -92,7 +92,7 @@
         <?PHP
         while (($rowg = oci_fetch_array($book_genre, OCI_BOTH))) {
           ?>
-            <a href="#"><?php echo $rowg["BGENRE"]; ?></a>
+            <a href=<?php echo "#".$rowg["BGENRE"]; ?>><?php echo $rowg["BGENRE"]; ?></a>
         <?php
         }
         ?>
