@@ -78,7 +78,7 @@
       </div>
     </div>
 
-    <h2> Ranking książek wg. wypożyczeń </h2>
+    <h2> Najpopularniejsze Książki <?php echo $time; ?> </h2>
 
     <table>
       <thead>
