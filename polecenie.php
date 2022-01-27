@@ -94,10 +94,10 @@
 
     <table>
     <?PHP
-      while (($row = oci_fetch_array($genre_yours_oci, OCI_BOTH))) {
+      while (($row3 = oci_fetch_array($others_oci, OCI_BOTH))) {
         ?>
         <tr>
-          <td><?php echo $row["BGENRE"]; ?></td>
+          <td><?php echo $row["BOOK"]; ?></td>
       		<td><?php echo $row["ILOSC"]; ?></td>
 	      </tr>
       <?php
