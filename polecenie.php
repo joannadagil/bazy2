@@ -63,8 +63,9 @@
       $row = oci_fetch_array($genre_yours_oci, OCI_BOTH);
       $genre = $row["BGENRE"];
       // iludzie z tym samym najpulnijszym gatuniem
-      $others_oci = oci_parse($conn, "SELECT COUNT(d.idlender) AS ILOSC, bookinstance.book FROM BORROWING JOIN (SELECT c.idlender FROM (SELECT b.bgenre, a.idlender, a.max_ilosc FROM (SELECT idlender, MAX(ilosc) AS max_ilosc FROM (SELECT bgenre, idlender, count(*) AS ILOSC FROM BOOK JOIN BOOKINSTANCE ON bid=book JOIN BORROWING ON biid=idbook GROUP BY bgenre, idlender) a GROUP BY idlender ORDER BY idlender) a JOIN (SELECT bgenre, idlender, count(*) AS ILOSC FROM BOOK JOIN BOOKINSTANCE ON bid=book JOIN BORROWING ON biid=idbook GROUP BY bgenre, idlender) b ON a.idlender=b.idlender WHERE a.max_ilosc = b.ilosc ORDER BY IDLENDER) c WHERE c.bgenre='".$genre."') d ON d.idlender=borrowing.idlender JOIN BOOKINSTANCE ON idbook=biid GROUP BY bookinstance.BOOK ORDER BY ILOSC DESC");
       // najpopularniejsza niewypożyczona kosziązka z posród tej grupy
+      $napis = "SELECT COUNT(d.idlender) AS ILOSC, bookinstance.book FROM BORROWING JOIN (SELECT c.idlender FROM (SELECT b.bgenre, a.idlender, a.max_ilosc FROM (SELECT idlender, MAX(ilosc) AS max_ilosc FROM (SELECT bgenre, idlender, count(*) AS ILOSC FROM BOOK JOIN BOOKINSTANCE ON bid=book JOIN BORROWING ON biid=idbook GROUP BY bgenre, idlender) a GROUP BY idlender ORDER BY idlender) a JOIN (SELECT bgenre, idlender, count(*) AS ILOSC FROM BOOK JOIN BOOKINSTANCE ON bid=book JOIN BORROWING ON biid=idbook GROUP BY bgenre, idlender) b ON a.idlender=b.idlender WHERE a.max_ilosc = b.ilosc ORDER BY IDLENDER) c WHERE c.bgenre='".$genre."') d ON d.idlender=borrowing.idlender JOIN BOOKINSTANCE ON idbook=biid GROUP BY bookinstance.BOOK ORDER BY ILOSC DESC"
+      $others_oci = oci_parse($conn, $napis);
       $row2 = oci_fetch_array($others_oci, OCI_BOTH);
       $book = $row2["BOOK"];
     ?>
@@ -78,6 +79,7 @@
     </div>
     
     <H2> Rekomendacja specjalnie dla ciebie:</H2>
+    <H2> <?php echo $napis ?> </H2>
     
 
     <div class="header2">
