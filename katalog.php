@@ -76,8 +76,6 @@
 
     <div class="topnav">
       <a href="main_page.php">Strona główna</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
       <div class="search-container">
         <form action="katalog.php">
           <input type="text" placeholder="Search.." name="search">
