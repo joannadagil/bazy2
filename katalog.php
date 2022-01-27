@@ -114,7 +114,7 @@
           <?php
             if (isset($_SESSION['USER'])) {
               echo "<td>
-                <div class=\"dropdown\">
+                <div class=\"dropdown2\">
                   <button class=\"dropbtn\">Oceń
                     <i class=\"fa fa-caret-down\"></i>
                   </button>
