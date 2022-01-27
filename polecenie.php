@@ -54,16 +54,12 @@
         echo $e['message'];
       }
 
-      $genre_oci = oci_parse($conn, "SELECT bgenre, SUM(AG_DIFF) AS WAGA FROM (SELECT a.*, (10-ABS(((SELECT BIRTH FROM MEMBER WHERE ".$_SESSION['USER']."=MID)-birth)/365)) AS AG_DIFF FROM (SELECT bgenre, birth FROM BOOKINSTANCE JOIN BORROWING ON biid=idbook JOIN BOOK ON book=bid JOIN MEMBER ON idlender=mid) a) b WHERE AG_DIFF >= 0 GROUP BY bgenre ORDER BY WAGA DESC");
-      oci_execute($genre_oci, OCI_NO_AUTO_COMMIT);
-
       // najpopularniejszyy twój gatunek
       $genre_yours_oci = oci_parse($conn, "SELECT bgenre, COUNT(*) AS ILOSC FROM BOOK JOIN BOOKINSTANCE ON bid=book JOIN BORROWING ON biid=idbook WHERE idlender=".$_SESSION['USER']."GROUP BY bgenre ORDER BY ILOSC DESC");
       oci_execute($genre_yours_oci, OCI_NO_AUTO_COMMIT);
       $row = oci_fetch_array($genre_yours_oci, OCI_BOTH);
       $genre = $row["BGENRE"];
-      // iludzie z tym samym najpulnijszym gatuniem
-      // najpopularniejsza niewypożyczona kosziązka z posród tej grupy
+      // najpopularniejsze ksiązki ludzi którzy maja te same najpopularniejsze gatunki jakie ty
       $napis = "SELECT COUNT(d.idlender) AS ILOSC, bookinstance.book FROM BORROWING JOIN (SELECT c.idlender FROM (SELECT b.bgenre, a.idlender, a.max_ilosc FROM (SELECT idlender, MAX(ilosc) AS max_ilosc FROM (SELECT bgenre, idlender, count(*) AS ILOSC FROM BOOK JOIN BOOKINSTANCE ON bid=book JOIN BORROWING ON biid=idbook GROUP BY bgenre, idlender) a GROUP BY idlender ORDER BY idlender) a JOIN (SELECT bgenre, idlender, count(*) AS ILOSC FROM BOOK JOIN BOOKINSTANCE ON bid=book JOIN BORROWING ON biid=idbook GROUP BY bgenre, idlender) b ON a.idlender=b.idlender WHERE a.max_ilosc = b.ilosc ORDER BY IDLENDER) c WHERE c.bgenre='".$genre."') d ON d.idlender=borrowing.idlender JOIN BOOKINSTANCE ON idbook=biid GROUP BY bookinstance.BOOK ORDER BY ILOSC DESC";
       $others_oci = oci_parse($conn, $napis);
       oci_execute($others_oci, OCI_NO_AUTO_COMMIT);
