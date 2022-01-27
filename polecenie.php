@@ -80,18 +80,7 @@
       </FORM>
     </div>
 
-    <table>
-    <?PHP
-      while (($row = oci_fetch_array($genre_oci, OCI_BOTH))) {
-        ?>
-        <tr>
-          <td><?php echo $row["BGENRE"]; ?></td>
-      		<td><?php echo $row["WAGA"]; ?></td>
-	      </tr>
-      <?php
-      }
-    ?>
-    </table>
+    
 
   </BODY>
 </HTML>
