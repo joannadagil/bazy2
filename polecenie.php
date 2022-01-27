@@ -81,7 +81,7 @@
     <H2> wyselekcjonowana przez AI o niezwykłej złożoności, wykwintnym guście i prawdziwie ludzkiej świadomości </H2>
 
     <div class="header2">
-      <h1>magia tu się ziści <?php echo $book ?></h1>
+      <h1> <?php echo $book ?></h1>
     </div>
 
     <div class="container">
