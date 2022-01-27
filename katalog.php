@@ -63,9 +63,14 @@
         $e = oci_error();
         echo $e['message'];
       }
-      // Tworzenie wyrazenia SQL-owego. Uzycie fmurlak.naukowiec zamiast naukowiec pozwala na odczytanie tabeli inego uzytkownika.
-      $stmt = oci_parse($conn, "SELECT * FROM BOOK WHERE BTITLE LIKE '%".$search."%' ORDER BY BID FETCH FIRST 100 ROWS ONLY");
+      if (isset($_GET['ratedbook']) && isset($_GET['rate']) && isset($_SESSION['USER'])) {
+        $napis = "INSERT INTO BORROWING VALUES (CURRENT_DATE, NULL,".$_SESSION['USER'].",".$res.")";
+        $stmt = oci_parse($conn, $napis);
+        oci_execute($stmt, OCI_NO_AUTO_COMMIT);
+        oci_commit($conn);
+      }
       // Wykonywanie wyrazenia SQL-owego
+      $stmt = oci_parse($conn, "SELECT * FROM BOOK WHERE BTITLE LIKE '%".$search."%' ORDER BY BID FETCH FIRST 100 ROWS ONLY");
       oci_execute($stmt, OCI_NO_AUTO_COMMIT);
     ?>
 
@@ -113,7 +118,7 @@
               <?PHP
               for ($i = 1; $i <= 10; $i++) {
                 ?>
-                  <a href=<?php echo "?ratedid=".$rowg["BID"]."&rate=".$i; ?>><?php echo $i; ?></a>
+                  <a href=<?php echo "?ratedbook=".$rowg["BID"]."&rate=".$i; ?>><?php echo $i; ?></a>
               <?php
               }
               ?>
