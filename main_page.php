@@ -48,13 +48,6 @@
       <p>im. Ignacego Makowskiego i Joanny Dagil</p>
     </div>
 
-    <div class="topnav">
-      <a class="active" href="main_page.php">Strona główna</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </div>
-
-
     <div class="mainnav">
 
       <form ACTION="katalog.php" METHOD="POST">
