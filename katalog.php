@@ -65,8 +65,8 @@
       }
       if (isset($_GET['ratedbook']) && isset($_GET['rate']) && isset($_SESSION['USER'])) {
         $napis = "INSERT INTO BORROWING VALUES (CURRENT_DATE, NULL,".$_SESSION['USER'].",".$res.")";
-        $stmt = oci_parse($conn, $napis);
-        oci_execute($stmt, OCI_NO_AUTO_COMMIT);
+        $sinsrt = oci_parse($conn, $napis);
+        oci_execute($sinsrt, OCI_NO_AUTO_COMMIT);
         oci_commit($conn);
       }
       // Wykonywanie wyrazenia SQL-owego
