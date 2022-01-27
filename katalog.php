@@ -13,42 +13,6 @@
         color: white;
         font-size: 19px;
       }
-      .rate {
-        border: /*1px solid #cccccc*/ none;
-        float: left;
-        height: 46px;
-        padding: 0 10px;
-      }
-      .rate:not(:checked) > input {
-        position:absolute;
-        top:-9999px;
-      }
-      .rate:not(:checked) > label {
-        float:right;
-        width:1em;
-        overflow:hidden;
-        white-space:nowrap;
-        cursor:pointer;
-        font-size:30px;
-        color:#ccc;
-      }
-      .rate:not(:checked) > label:before {
-        content: '★ ';
-      }
-      .rate > input:checked ~ label {
-        color: #ffc700;
-      }
-      .rate:not(:checked) > label:hover,
-      .rate:not(:checked) > label:hover ~ label {
-        color: #deb217;
-      }
-      .rate > input:checked + label:hover,
-      .rate > input:checked + label:hover ~ label,
-      .rate > input:checked ~ label:hover,
-      .rate > input:checked ~ label:hover ~ label,
-      .rate > label:hover ~ input:checked ~ label {
-        color: #c59b08;
-      }
       .topnav input[type=submit] {
         float: right;
         padding: 14px 16px;
@@ -141,12 +105,19 @@
             </form>
           </td>
           <td>
-            <div class="rate">
-              <input type="radio" href="#5" id=<?php echo "\"star5".$row["BID"]."\""?> name="rate" value="5" /><label href="#" for=<?php echo "\"star5".$row["BID"]."\""?> title="text">5 stars</label>
-              <input type="radio" href="#4" id=<?php echo "\"star4".$row["BID"]."\""?> name="rate" value="4" /><label href="#" for=<?php echo "\"star4".$row["BID"]."\""?> title="text">4 stars</label>
-              <input type="radio" href="#3" id=<?php echo "\"star3".$row["BID"]."\""?> name="rate" value="3" /><label href="#" for=<?php echo "\"star3".$row["BID"]."\""?> title="text">3 stars</label>
-              <input type="radio" href="#2" id=<?php echo "\"star2".$row["BID"]."\""?> name="rate" value="2" /><label href="#" for=<?php echo "\"star2".$row["BID"]."\""?> title="text">2 stars</label>
-              <input type="radio" href="#1" id=<?php echo "\"star1".$row["BID"]."\""?> name="rate" value="1" /><label href="#" for=<?php echo "\"star1".$row["BID"]."\""?> title="text">1 star</label>
+            <div class="dropdown">
+              <button class="dropbtn">Oceń
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+              <?PHP
+              for ($i = 1; $i <= 10; $i++) {
+                ?>
+                  <a href=<?php echo "?ratedid=".$rowg["BID"]."&rate=".$i; ?>><?php echo $i; ?></a>
+              <?php
+              }
+              ?>
+              </div>
             </div>
           </td>
 	      </tr>
