@@ -57,6 +57,13 @@
       $genre_oci = oci_parse($conn, "SELECT bgenre, SUM(AG_DIFF) AS WAGA FROM (SELECT a.*, (10-ABS(((SELECT BIRTH FROM MEMBER WHERE ".$_SESSION['USER']."=MID)-birth)/365)) AS AG_DIFF FROM (SELECT bgenre, birth FROM BOOKINSTANCE JOIN BORROWING ON biid=idbook JOIN BOOK ON book=bid JOIN MEMBER ON idlender=mid) a) b WHERE AG_DIFF >= 0 GROUP BY bgenre ORDER BY WAGA DESC");
       oci_execute($genre_oci, OCI_NO_AUTO_COMMIT);
 
+      // najpopularniejszyy twój gatunek
+      $genre_yours = oci_parse($conn, "SELECT bgenre, COUNT(*) AS ILOSC FROM BOOK JOIN BOOKINSTANCE ON bid=book JOIN BORROWING ON biid=idbook WHERE idlender=".$_SESSION['USER']."GROUP BY bgenre");
+      oci_execute($genre_yours, OCI_NO_AUTO_COMMIT);
+      // iludzie z tym samym najpulnijszym gatuniem
+
+      // najpopularniejsza niewypożyczona kosziązka z posród tej grupy
+
     ?>
 
     <div class="topnav">
@@ -82,11 +89,11 @@
 
     <table>
     <?PHP
-      while (($row = oci_fetch_array($genre_oci, OCI_BOTH))) {
+      while (($row = oci_fetch_array($genre_yours, OCI_BOTH))) {
         ?>
         <tr>
           <td><?php echo $row["BGENRE"]; ?></td>
-      		<td><?php echo $row["WAGA"]; ?></td>
+      		<td><?php echo $row["ILOSC"]; ?></td>
 	      </tr>
       <?php
       }
