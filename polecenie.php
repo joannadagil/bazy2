@@ -68,7 +68,12 @@
       $others_oci = oci_parse($conn, $napis);
       oci_execute($others_oci, OCI_NO_AUTO_COMMIT);
       $row2 = oci_fetch_array($others_oci, OCI_BOTH);
-      $book = $row2["BOOK"];
+      $bookid = $row2["BOOK"];
+      // id na tytuł
+      $title_oci = oci_parse($conn, "SELECT BTITLE FROM BOOK WHERE book.bid=".$bookid);
+      oci_execute($title_oci, OCI_NO_AUTO_COMMIT);
+      $row4 = oci_fetch_array($title_oci, OCI_BOTH);
+      $book = $row4["BTITLE"];
     ?>
 
     <div class="topnav">
