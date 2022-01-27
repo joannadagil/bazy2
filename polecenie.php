@@ -58,12 +58,15 @@
       oci_execute($genre_oci, OCI_NO_AUTO_COMMIT);
 
       // najpopularniejszyy twój gatunek
-      $genre_yours = oci_parse($conn, "SELECT bgenre, COUNT(*) AS ILOSC FROM BOOK JOIN BOOKINSTANCE ON bid=book JOIN BORROWING ON biid=idbook WHERE idlender=".$_SESSION['USER']."GROUP BY bgenre ORDER BY ILOSC");
-      oci_execute($genre_yours, OCI_NO_AUTO_COMMIT);
+      $genre_yours_oci = oci_parse($conn, "SELECT bgenre, COUNT(*) AS ILOSC FROM BOOK JOIN BOOKINSTANCE ON bid=book JOIN BORROWING ON biid=idbook WHERE idlender=".$_SESSION['USER']."GROUP BY bgenre ORDER BY ILOSC DESC");
+      oci_execute($genre_yours_oci, OCI_NO_AUTO_COMMIT);
+      $row = oci_fetch_array($genre_yours_oci, OCI_BOTH);
+      $genre = $row["BGENRE"];
       // iludzie z tym samym najpulnijszym gatuniem
-
+      $others_oci = oci_parse($conn, "SELECT COUNT(d.idlender) AS ILOSC, bookinstance.book FROM BORROWING JOIN (SELECT c.idlender FROM (SELECT b.bgenre, a.idlender, a.max_ilosc FROM (SELECT idlender, MAX(ilosc) AS max_ilosc FROM (SELECT bgenre, idlender, count(*) AS ILOSC FROM BOOK JOIN BOOKINSTANCE ON bid=book JOIN BORROWING ON biid=idbook GROUP BY bgenre, idlender) a GROUP BY idlender ORDER BY idlender) a JOIN (SELECT bgenre, idlender, count(*) AS ILOSC FROM BOOK JOIN BOOKINSTANCE ON bid=book JOIN BORROWING ON biid=idbook GROUP BY bgenre, idlender) b ON a.idlender=b.idlender WHERE a.max_ilosc = b.ilosc ORDER BY IDLENDER) c WHERE c.bgenre='".$genre."') d ON d.idlender=borrowing.idlender JOIN BOOKINSTANCE ON idbook=biid GROUP BY bookinstance.BOOK ORDER BY ILOSC DESC");
       // najpopularniejsza niewypożyczona kosziązka z posród tej grupy
-
+      $row2 = oci_fetch_array($genre_yours_oci, OCI_BOTH);
+      $book = $row2["BOOK"];
     ?>
 
     <div class="topnav">
@@ -78,7 +81,7 @@
     <H2> wyselekcjonowana przez AI o niezwykłej złożoności, wykwintnym guście i prawdziwie ludzkiej świadomości </H2>
 
     <div class="header2">
-      <h1>magia tu się ziści <?php echo $TITLE ?></h1>
+      <h1>magia tu się ziści <?php echo $book ?></h1>
     </div>
 
     <div class="container">
@@ -89,7 +92,7 @@
 
     <table>
     <?PHP
-      while (($row = oci_fetch_array($genre_yours, OCI_BOTH))) {
+      while (($row = oci_fetch_array($genre_yours_oci, OCI_BOTH))) {
         ?>
         <tr>
           <td><?php echo $row["BGENRE"]; ?></td>
