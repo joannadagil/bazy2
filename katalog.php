@@ -63,6 +63,9 @@
         $e = oci_error();
         echo $e['message'];
       }
+      if ($_SESSION['USER']) {
+        echo $_SESSION['USER'];
+      }
       if (isset($_GET['ratedbook']) && isset($_GET['rate']) && isset($_SESSION['USER'])) {
         $napis = "INSERT INTO RATING VALUES (".$_GET['rate'].", CURRENT_DATE,".$_SESSION['USER'].",".$_GET['ratedbook'].")";
         $sinsrt = oci_parse($conn, $napis);
