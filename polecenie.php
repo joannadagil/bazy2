@@ -58,7 +58,7 @@
       oci_execute($genre_oci, OCI_NO_AUTO_COMMIT);
 
       // najpopularniejszyy twój gatunek
-      $genre_yours = oci_parse($conn, "SELECT bgenre, COUNT(*) AS ILOSC FROM BOOK JOIN BOOKINSTANCE ON bid=book JOIN BORROWING ON biid=idbook WHERE idlender=".$_SESSION['USER']."GROUP BY bgenre");
+      $genre_yours = oci_parse($conn, "SELECT bgenre, COUNT(*) AS ILOSC FROM BOOK JOIN BOOKINSTANCE ON bid=book JOIN BORROWING ON biid=idbook WHERE idlender=".$_SESSION['USER']."GROUP BY bgenre ORDER BY ILOSC");
       oci_execute($genre_yours, OCI_NO_AUTO_COMMIT);
       // iludzie z tym samym najpulnijszym gatuniem
 
