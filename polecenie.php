@@ -85,9 +85,7 @@
     </div>
     
     <H2> Rekomendacja specjalnie dla ciebie:</H2>
-    <H2> <?php echo $napis ?> </H2>
     
-
     <div class="header2">
       <h1> <?php echo $book ?></h1>
     </div>
@@ -98,18 +96,6 @@
       </FORM>
     </div>
 
-    <table>
-    <?PHP
-      while (($row3 = oci_fetch_array($others_oci, OCI_BOTH))) {
-        ?>
-        <tr>
-          <td><?php echo $row["BOOK"]; ?></td>
-      		<td><?php echo $row["ILOSC"]; ?></td>
-	      </tr>
-      <?php
-      }
-    ?>
-    </table>
 
   </BODY>
 </HTML>
