@@ -120,12 +120,12 @@
                   </button>
                   <div class=\"dropdown-content\">";
               for ($i = 0; $i <= 9; $i++) {
+                ?>
+                <a href=<?php echo "?ratedbook=".$row["BID"]."&rate=".$i; ?>><?php echo $i; ?></a>
+                <?php
+              }
             }
           ?>
-                <a href=<?php echo "?ratedbook=".$row["BID"]."&rate=".$i; ?>><?php echo $i; ?></a>
-              <?php
-              }
-              ?>
               <?php
                 if (isset($_SESSION['USER'])) {
                   echo "</div></div></td>";
