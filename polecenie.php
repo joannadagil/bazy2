@@ -77,8 +77,8 @@
       <a class="active" href="polecenie.php">Moja rekomendacja</a>
     </div>
     
-    <H2> Rekomendacja specjalnie dla ciebie,</H2>
-    <H2> wyselekcjonowana przez AI o niezwykłej złożoności, wykwintnym guście i prawdziwie ludzkiej świadomości </H2>
+    <H2> Rekomendacja specjalnie dla ciebie:</H2>
+    
 
     <div class="header2">
       <h1> <?php echo $book ?></h1>
