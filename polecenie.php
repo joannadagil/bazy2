@@ -53,11 +53,10 @@
         $e = oci_error();
         echo $e['message'];
       }
-      $genre = 
 
+      $genre_oci = oci_parse($conn, "SELECT bgenre, SUM(AG_DIFF) AS WAGA FROM (SELECT a.*, (10-((SELECT BIRTH FROM MEMBER WHERE ".($_SESSION['USER']."=MID;))-birth)/365) AS AG_DIFF FROM (SELECT bgenre, birth FROM BOOKINSTANCE JOIN BORROWING ON biid=idbook JOIN BOOK ON book=bid JOIN MEMBER ON idlender=mid) a) b WHERE AG_DIFF >= 0 GROUP BY bgenre ORDER BY WAGA DESC;");
+      oci_execute($genre_oci, OCI_NO_AUTO_COMMIT);
 
-      $stmt = oci_parse($conn,"SELECT BI.BIID AS ID, B.BTITLE AS TITL, D.DNAME AS NAM, D.DADDRESS AS ADRS, BR.BORROW AS BOR, BR.RETURN AS RET FROM BOOK B, BOOKINSTANCE BI, DEPARTMENT D , BORROWING BR WHERE BI.BOOK = B.BID AND BI.DEPARTMENT = D.DID AND BR.IDBOOK = BI.BIID AND BR.RETURN IS NOT NULL AND BR.IDLENDER = ".$_SESSION['USER']."ORDER BY BR.RETURN DESC FETCH FIRST 100 ROWS ONLY");
-      oci_execute($stmt, OCI_NO_AUTO_COMMIT);
     ?>
 
     <div class="topnav">
@@ -80,6 +79,19 @@
         <INPUT TYPE="SUBMIT" VALUE="Nowa rekomendacja">
       </FORM>
     </div>
+
+    <table>
+    <?PHP
+      while (($row = oci_fetch_array($genre_oci, OCI_BOTH))) {
+        ?>
+        <tr>
+          <td><?php echo $row["BGENRE"]; ?></td>
+      		<td><?php echo $row["WAGA"]; ?></td>
+	      </tr>
+      <?php
+      }
+    ?>
+    </table>
 
   </BODY>
 </HTML>
