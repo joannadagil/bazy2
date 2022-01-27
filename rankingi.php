@@ -66,7 +66,7 @@
       <thead>
         <tr>
           <td> Miejsce </td>
-          <td> Tytuł </td>
+          <td> Imię autora </td>
           <td> Ilość książek </td>
         </tr>
       </thead>
