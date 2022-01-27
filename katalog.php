@@ -64,7 +64,7 @@
         echo $e['message'];
       }
       if (isset($_GET['ratedbook']) && isset($_GET['rate']) && isset($_SESSION['USER'])) {
-        $napis = "INSERT INTO BORROWING VALUES (CURRENT_DATE, NULL,".$_SESSION['USER'].",".$res.")";
+        $napis = "INSERT INTO RATING VALUES (".$_GET['rate'].", CURRENT_DATE,".$_SESSION['USER'].",".$_GET['ratedbook'].")";
         $sinsrt = oci_parse($conn, $napis);
         oci_execute($sinsrt, OCI_NO_AUTO_COMMIT);
         oci_commit($conn);
@@ -116,9 +116,9 @@
               </button>
               <div class="dropdown-content">
               <?PHP
-              for ($i = 1; $i <= 10; $i++) {
+              for ($i = 0; $i <= 9; $i++) {
                 ?>
-                  <a href=<?php echo "?ratedbook=".$rowg["BID"]."&rate=".$i; ?>><?php echo $i; ?></a>
+                  <a href=<?php echo "?ratedbook=".$row["BID"]."&rate=".$i; ?>><?php echo $i; ?></a>
               <?php
               }
               ?>
