@@ -90,11 +90,6 @@
       <h1> <?php echo $book ?></h1>
     </div>
 
-    <div class="container">
-      <FORM ACTION="polecenie.php" METHOD="POST">    
-        <INPUT TYPE="SUBMIT" VALUE="Nowa rekomendacja">
-      </FORM>
-    </div>
 
 
   </BODY>
