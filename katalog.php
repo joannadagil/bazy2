@@ -117,7 +117,7 @@
       </div>
     </div>
 
-    <table> 
+    <table>
       <thead>
         <tr>
           <td> ID </td>
@@ -142,11 +142,11 @@
           </td>
           <td>
             <div class="rate">
-              <input type="radio" id=<?php echo "\"star5".$row["BID"]."\""?> name="rate" value="5" /><label for=<?php echo "\"star5".$row["BID"]."\""?> title="text">5 stars</label>
-              <input type="radio" id=<?php echo "\"star4".$row["BID"]."\""?> name="rate" value="4" /><label for=<?php echo "\"star4".$row["BID"]."\""?> title="text">4 stars</label>
-              <input type="radio" id=<?php echo "\"star3".$row["BID"]."\""?> name="rate" value="3" /><label for=<?php echo "\"star3".$row["BID"]."\""?> title="text">3 stars</label>
-              <input type="radio" id=<?php echo "\"star2".$row["BID"]."\""?> name="rate" value="2" /><label for=<?php echo "\"star2".$row["BID"]."\""?> title="text">2 stars</label>
-              <input type="radio" id=<?php echo "\"star1".$row["BID"]."\""?> name="rate" value="1" /><label for=<?php echo "\"star1".$row["BID"]."\""?> title="text">1 star</label>
+              <input type="radio" href="#5" id=<?php echo "\"star5".$row["BID"]."\""?> name="rate" value="5" /><label for=<?php echo "\"star5".$row["BID"]."\""?> title="text">5 stars</label>
+              <input type="radio" href="#4" id=<?php echo "\"star4".$row["BID"]."\""?> name="rate" value="4" /><label for=<?php echo "\"star4".$row["BID"]."\""?> title="text">4 stars</label>
+              <input type="radio" href="#3" id=<?php echo "\"star3".$row["BID"]."\""?> name="rate" value="3" /><label for=<?php echo "\"star3".$row["BID"]."\""?> title="text">3 stars</label>
+              <input type="radio" href="#2" id=<?php echo "\"star2".$row["BID"]."\""?> name="rate" value="2" /><label for=<?php echo "\"star2".$row["BID"]."\""?> title="text">2 stars</label>
+              <input type="radio" href="#1" id=<?php echo "\"star1".$row["BID"]."\""?> name="rate" value="1" /><label for=<?php echo "\"star1".$row["BID"]."\""?> title="text">1 star</label>
             </div>
           </td>
 	      </tr>
