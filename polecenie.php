@@ -54,7 +54,8 @@
         echo $e['message'];
       }
 
-      
+      $genre_oci = oci_parse($conn, "SELECT bgenre, SUM(AG_DIFF) AS WAGA FROM (SELECT a.*, (10-((SELECT BIRTH FROM MEMBER WHERE ".($_SESSION['USER']."=MID))-birth)/365) AS AG_DIFF FROM (SELECT bgenre, birth FROM BOOKINSTANCE JOIN BORROWING ON biid=idbook JOIN BOOK ON book=bid JOIN MEMBER ON idlender=mid) a) b WHERE AG_DIFF >= 0 GROUP BY bgenre ORDER BY WAGA DESC;");
+      oci_execute($genre_oci, OCI_NO_AUTO_COMMIT);
 
     ?>
 
@@ -79,7 +80,18 @@
       </FORM>
     </div>
 
-    
+    <table>
+    <?PHP
+      while (($row = oci_fetch_array($genre_oci, OCI_BOTH))) {
+        ?>
+        <tr>
+          <td><?php echo $row["BGENRE"]; ?></td>
+      		<td><?php echo $row["WAGA"]; ?></td>
+	      </tr>
+      <?php
+      }
+    ?>
+    </table>
 
   </BODY>
 </HTML>
