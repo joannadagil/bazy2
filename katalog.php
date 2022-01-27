@@ -111,22 +111,26 @@
               <input TYPE="SUBMIT" VALUE="Wypozyczanie">
             </form>
           </td>
-          <td>
-            <div class="dropdown">
-              <button class="dropbtn">Oceń
-                <i class="fa fa-caret-down"></i>
-              </button>
-              <div class="dropdown-content">
-              <?PHP
+          <?php
+            if (isset($_SESSION['USER'])) {
+              echo "<td>
+                <div class=\"dropdown\">
+                  <button class=\"dropbtn\">Oceń
+                    <i class=\"fa fa-caret-down\"></i>
+                  </button>
+                  <div class=\"dropdown-content\">";
               for ($i = 0; $i <= 9; $i++) {
-                ?>
-                  <a href=<?php echo "?ratedbook=".$row["BID"]."&rate=".$i; ?>><?php echo $i; ?></a>
+            }
+          ?>
+                <a href=<?php echo "?ratedbook=".$row["BID"]."&rate=".$i; ?>><?php echo $i; ?></a>
               <?php
               }
               ?>
-              </div>
-            </div>
-          </td>
+              <?php
+                if (isset($_SESSION['USER'])) {
+                  echo "</div></div></td>";
+                }
+              ?>
 	      </tr>
       <?php
       }
