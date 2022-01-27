@@ -68,7 +68,7 @@
       $others_oci = oci_parse($conn, $napis);
       oci_execute($others_oci, OCI_NO_AUTO_COMMIT);
       $row2 = oci_fetch_array($others_oci, OCI_BOTH);
-      $book = $row2["BOOK"];
+      $book = $row2["BTITLE"];
     ?>
 
     <div class="topnav">
