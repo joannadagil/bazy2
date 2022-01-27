@@ -52,7 +52,17 @@
       <a href="polecenie.php">Moja rekomendacja</a>
     </div>
 
-    <table> <?PHP
+    <table> 
+      <thead>
+        <tr>
+          <td> ID </td>
+          <td> Tytuł </td>
+          <td> Departament </td>
+          <td> Adres </td>
+          <td> Zwrot </td>
+        </tr>
+      </thead>
+      <?PHP
       while (($row = oci_fetch_array($stmt, OCI_BOTH))) {
         ?>
         <tr>
